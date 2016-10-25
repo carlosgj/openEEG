@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -8519,7 +8519,6 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 <part name="R2" library="resistor" deviceset="R-US_" device="0207/2V" value="1M"/>
 <part name="U$14" library="SUPPLY2" deviceset="AGND" device=""/>
 <part name="SJ1" library="jumper" deviceset="SJ" device="W"/>
-<part name="SUPPLY2" library="SUPPLY2" deviceset="VDD" device=""/>
 <part name="R3" library="resistor" deviceset="R-US_" device="0207/2V" value="7.5k"/>
 <part name="C1" library="resistor" deviceset="C-US" device="C1206" value="220nf"/>
 <part name="U$15" library="SUPPLY2" deviceset="AGND" device=""/>
@@ -8608,6 +8607,8 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 <part name="U$39" library="SUPPLY2" deviceset="+5V/2" device=""/>
 <part name="C28" library="resistor" deviceset="C-US" device="C1206" value="100nF"/>
 <part name="U$40" library="SUPPLY2" deviceset="AGND" device=""/>
+<part name="U$41" library="SUPPLY2" deviceset="+5V/2" device=""/>
+<part name="VREF" library="WIREPAD" deviceset="1,6/0,8" device="" value=" "/>
 </parts>
 <sheets>
 <sheet>
@@ -8785,7 +8786,6 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 <instance part="R2" gate="G$1" x="403.86" y="129.54"/>
 <instance part="U$14" gate="G$1" x="375.92" y="109.22"/>
 <instance part="SJ1" gate="1" x="375.92" y="119.38" rot="R90"/>
-<instance part="SUPPLY2" gate="G$1" x="436.88" y="104.14"/>
 <instance part="R3" gate="G$1" x="330.2" y="154.94"/>
 <instance part="C1" gate="G$1" x="335.28" y="147.32" rot="R180"/>
 <instance part="U$15" gate="G$1" x="335.28" y="139.7"/>
@@ -8957,6 +8957,8 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 <instance part="U$39" gate="G$1" x="449.58" y="93.98"/>
 <instance part="C28" gate="G$1" x="426.72" y="111.76" rot="MR180"/>
 <instance part="U$40" gate="G$1" x="436.88" y="114.3"/>
+<instance part="U$41" gate="G$1" x="436.88" y="104.14"/>
+<instance part="VREF" gate="P" x="27.94" y="106.68"/>
 </instances>
 <busses>
 </busses>
@@ -9102,6 +9104,7 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 <pinref part="C218" gate="G$1" pin="2"/>
 <pinref part="C215" gate="G$1" pin="2"/>
 <pinref part="IC2" gate="G$1" pin="REF"/>
+<label x="39.116" y="105.918" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="144.78" y1="110.49" x2="153.67" y2="110.49" width="0.1524" layer="91"/>
@@ -9259,6 +9262,10 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 <pinref part="X1" gate="G$1" pin="2"/>
 <wire x1="457.2" y1="96.52" x2="459.74" y2="96.52" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="VREF" gate="P" pin="P"/>
+<wire x1="30.48" y1="106.68" x2="38.1" y2="106.68" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$12" class="0">
 <segment>
@@ -9362,6 +9369,19 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 <pinref part="U$39" gate="G$1" pin="+5V/2"/>
 <pinref part="X1" gate="G$1" pin="4"/>
 <wire x1="449.58" y1="91.44" x2="459.74" y2="91.44" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="VIO1"/>
+<wire x1="434.34" y1="101.6" x2="436.88" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="436.88" y1="101.6" x2="436.88" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="VIO2"/>
+<wire x1="436.88" y1="99.06" x2="436.88" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="436.88" y1="88.9" x2="434.34" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="SDI1"/>
+<wire x1="434.34" y1="99.06" x2="436.88" y2="99.06" width="0.1524" layer="91"/>
+<junction x="436.88" y="99.06"/>
+<pinref part="U$41" gate="G$1" pin="+5V/2"/>
+<junction x="436.88" y="101.6"/>
 </segment>
 </net>
 <net name="N$25" class="0">
@@ -9642,15 +9662,6 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 <junction x="426.72" y="109.22"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="VIO1"/>
-<wire x1="434.34" y1="101.6" x2="436.88" y2="101.6" width="0.1524" layer="91"/>
-<wire x1="436.88" y1="101.6" x2="436.88" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="VIO2"/>
-<wire x1="436.88" y1="88.9" x2="434.34" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="SUPPLY2" gate="G$1" pin="VDD"/>
-<junction x="436.88" y="101.6"/>
-</segment>
-<segment>
 <pinref part="SUPPLY3" gate="G$1" pin="VDD"/>
 <pinref part="X1" gate="G$1" pin="3"/>
 <wire x1="454.66" y1="93.98" x2="459.74" y2="93.98" width="0.1524" layer="91"/>
@@ -9698,9 +9709,13 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 <segment>
 <pinref part="U$1" gate="G$1" pin="CNV1"/>
 <wire x1="434.34" y1="93.98" x2="444.5" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="444.5" y1="93.98" x2="444.5" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="444.5" y1="93.98" x2="444.5" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="CNV2"/>
+<wire x1="444.5" y1="88.9" x2="444.5" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="444.5" y1="81.28" x2="434.34" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="X1" gate="G$1" pin="5"/>
+<wire x1="459.74" y1="88.9" x2="444.5" y2="88.9" width="0.1524" layer="91"/>
+<junction x="444.5" y="88.9"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -10142,15 +10157,6 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 <wire x1="457.2" y1="78.74" x2="457.2" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="X1" gate="G$1" pin="6"/>
 <wire x1="457.2" y1="86.36" x2="459.74" y2="86.36" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$68" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="SDI1"/>
-<wire x1="434.34" y1="99.06" x2="447.04" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="447.04" y1="99.06" x2="447.04" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="X1" gate="G$1" pin="5"/>
-<wire x1="447.04" y1="88.9" x2="459.74" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$66" class="0">
