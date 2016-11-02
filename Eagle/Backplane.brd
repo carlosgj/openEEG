@@ -57,10 +57,10 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="10.16" x2="190.17" y2="10.16" width="0" layer="20"/>
-<wire x1="190.17" y1="10.16" x2="190.17" y2="48.25" width="0" layer="20"/>
-<wire x1="190.17" y1="48.25" x2="0" y2="48.25" width="0" layer="20"/>
-<wire x1="0" y1="48.25" x2="0" y2="10.16" width="0" layer="20"/>
+<wire x1="0" y1="10.16" x2="190.5" y2="10.16" width="0" layer="20"/>
+<wire x1="190.5" y1="10.16" x2="190.5" y2="48.26" width="0" layer="20"/>
+<wire x1="190.5" y1="48.26" x2="0" y2="48.26" width="0" layer="20"/>
+<wire x1="0" y1="48.26" x2="0" y2="10.16" width="0" layer="20"/>
 </plain>
 <libraries>
 <library name="con-subd">
