@@ -9685,11 +9685,8 @@ Source: www.kingbright.com</description>
 <part name="U$45" library="SUPPLY2" deviceset="AGND" device=""/>
 <part name="U$46" library="SUPPLY2" deviceset="AGND" device=""/>
 <part name="LED1" library="led" deviceset="LED" device="3MM"/>
-<part name="R1" library="resistor" deviceset="R-US_" device="0207/2V"/>
+<part name="R1" library="resistor" deviceset="R-US_" device="0207/2V" value="1.65k"/>
 <part name="U$47" library="SUPPLY2" deviceset="AGND" device=""/>
-<part name="R2" library="resistor" deviceset="R-US_" device="0207/2V"/>
-<part name="U$48" library="SUPPLY2" deviceset="AGND" device=""/>
-<part name="LED2" library="led" deviceset="LED" device="3MM"/>
 </parts>
 <sheets>
 <sheet>
@@ -10069,9 +10066,6 @@ Source: www.kingbright.com</description>
 <instance part="LED1" gate="G$1" x="515.62" y="109.22"/>
 <instance part="R1" gate="G$1" x="515.62" y="116.84" rot="R90"/>
 <instance part="U$47" gate="G$1" x="515.62" y="101.6"/>
-<instance part="R2" gate="G$1" x="444.5" y="76.2" rot="R90"/>
-<instance part="U$48" gate="G$1" x="444.5" y="60.96"/>
-<instance part="LED2" gate="G$1" x="444.5" y="68.58"/>
 </instances>
 <busses>
 </busses>
@@ -10223,10 +10217,6 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="LED1" gate="G$1" pin="C"/>
 <pinref part="U$47" gate="G$1" pin="AGND"/>
-</segment>
-<segment>
-<pinref part="LED2" gate="G$1" pin="C"/>
-<pinref part="U$48" gate="G$1" pin="AGND"/>
 </segment>
 </net>
 <net name="VCOM" class="0">
@@ -10832,8 +10822,6 @@ Source: www.kingbright.com</description>
 <wire x1="459.74" y1="88.9" x2="444.5" y2="88.9" width="0.1524" layer="91"/>
 <junction x="444.5" y="88.9"/>
 <pinref part="X2" gate="-19" pin="F"/>
-<pinref part="R2" gate="G$1" pin="2"/>
-<junction x="444.5" y="81.28"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -11333,12 +11321,6 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="LED1" gate="G$1" pin="A"/>
 <pinref part="R1" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="N$67" class="0">
-<segment>
-<pinref part="R2" gate="G$1" pin="1"/>
-<pinref part="LED2" gate="G$1" pin="A"/>
 </segment>
 </net>
 </nets>

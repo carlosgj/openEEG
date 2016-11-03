@@ -16396,7 +16396,7 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <part name="C10" library="resistor" deviceset="CPOL-US" device="E5-8.5" value="1uF"/>
 <part name="C11" library="resistor" deviceset="C-EU" device="050-025X075" value="0.1uF"/>
 <part name="U$3" library="modEEG" deviceset="ROL-0505S" device=""/>
-<part name="R3" library="resistor" deviceset="R-US_" device="0204/2V" value="200k"/>
+<part name="R3" library="resistor" deviceset="R-US_" device="0204/2V" value="1.65k"/>
 <part name="LED1" library="led" deviceset="LED" device="3MM"/>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY17" library="supply2" deviceset="DGND" device=""/>
@@ -16478,9 +16478,9 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <part name="SUPPLY55" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY56" library="supply2" deviceset="DGND" device=""/>
 <part name="SUPPLY57" library="supply2" deviceset="DGND" device=""/>
-<part name="R16" library="resistor" deviceset="R-US_" device="0204/2V" value="200k"/>
+<part name="R16" library="resistor" deviceset="R-US_" device="0204/2V" value="1.65k"/>
 <part name="LED2" library="led" deviceset="LED" device="3MM"/>
-<part name="R17" library="resistor" deviceset="R-US_" device="0204/2V" value="200k"/>
+<part name="R17" library="resistor" deviceset="R-US_" device="0204/2V" value="1.65k"/>
 <part name="LED3" library="led" deviceset="LED" device="3MM"/>
 <part name="SUPPLY58" library="supply2" deviceset="DGND" device=""/>
 <part name="JP1" library="jumper" deviceset="JP2E" device=""/>
