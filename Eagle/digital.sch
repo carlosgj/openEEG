@@ -16137,70 +16137,6 @@ Source: ERNI-D-Sub-Conmnectors-d.pdf / www.erni.com</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="jumper">
-<description>&lt;b&gt;Jumpers&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="JP1">
-<description>&lt;b&gt;JUMPER&lt;/b&gt;</description>
-<wire x1="-1.016" y1="0" x2="-1.27" y2="0.254" width="0.1524" layer="21"/>
-<wire x1="-1.016" y1="0" x2="-1.27" y2="-0.254" width="0.1524" layer="21"/>
-<wire x1="1.016" y1="0" x2="1.27" y2="0.254" width="0.1524" layer="21"/>
-<wire x1="1.016" y1="0" x2="1.27" y2="-0.254" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="-0.254" x2="1.27" y2="-2.286" width="0.1524" layer="21"/>
-<wire x1="1.016" y1="-2.54" x2="1.27" y2="-2.286" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="2.286" x2="1.016" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="2.286" x2="1.27" y2="0.254" width="0.1524" layer="21"/>
-<wire x1="1.016" y1="2.54" x2="-1.016" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="2.286" x2="-1.016" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="2.286" x2="-1.27" y2="0.254" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="-0.254" x2="-1.27" y2="-2.286" width="0.1524" layer="21"/>
-<wire x1="-1.016" y1="-2.54" x2="-1.27" y2="-2.286" width="0.1524" layer="21"/>
-<wire x1="-1.016" y1="-2.54" x2="1.016" y2="-2.54" width="0.1524" layer="21"/>
-<pad name="1" x="0" y="-1.27" drill="0.9144" shape="long"/>
-<pad name="2" x="0" y="1.27" drill="0.9144" shape="long"/>
-<text x="-1.651" y="-2.54" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="2.921" y="-2.54" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
-<rectangle x1="-0.3048" y1="0.9652" x2="0.3048" y2="1.5748" layer="51"/>
-<rectangle x1="-0.3048" y1="-1.5748" x2="0.3048" y2="-0.9652" layer="51"/>
-</package>
-</packages>
-<symbols>
-<symbol name="J1">
-<wire x1="0" y1="2.54" x2="0" y2="3.81" width="0.4064" layer="94"/>
-<wire x1="0" y1="3.81" x2="0" y2="5.08" width="0.1524" layer="94"/>
-<wire x1="0" y1="-2.54" x2="0" y2="-3.81" width="0.4064" layer="94"/>
-<wire x1="0" y1="-3.81" x2="0" y2="-5.08" width="0.1524" layer="94"/>
-<wire x1="-1.905" y1="5.08" x2="1.905" y2="5.08" width="0.4064" layer="94"/>
-<wire x1="1.905" y1="5.08" x2="1.905" y2="-5.08" width="0.4064" layer="94"/>
-<wire x1="1.905" y1="-5.08" x2="-1.905" y2="-5.08" width="0.4064" layer="94"/>
-<wire x1="-1.905" y1="-5.08" x2="-1.905" y2="5.08" width="0.4064" layer="94"/>
-<text x="-2.54" y="-5.08" size="1.778" layer="95" rot="R90">&gt;NAME</text>
-<text x="4.445" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
-<pin name="1" x="0" y="-7.62" visible="pad" length="short" direction="pas" rot="R90"/>
-<pin name="2" x="0" y="7.62" visible="pad" length="short" direction="pas" rot="R270"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="JP1Q" prefix="JP" uservalue="yes">
-<description>&lt;b&gt;JUMPER&lt;/b&gt;</description>
-<gates>
-<gate name="A" symbol="J1" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="JP1">
-<connects>
-<connect gate="A" pin="1" pad="1"/>
-<connect gate="A" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="optocoupler">
 <description>&lt;b&gt;Opto Couplers&lt;/b&gt;&lt;p&gt;
 Siemens, Hewlett-Packard, Texas Instuments, Sharp, Motorola&lt;p&gt;
@@ -16356,6 +16292,85 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="jumper">
+<description>&lt;b&gt;Jumpers&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="JP2">
+<description>&lt;b&gt;JUMPER&lt;/b&gt;</description>
+<wire x1="-3.81" y1="-1.016" x2="-3.81" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="3.556" y1="1.27" x2="1.524" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="1.016" x2="1.524" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="3.556" y1="-1.27" x2="1.524" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-1.016" x2="1.524" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="3.556" y1="-1.27" x2="3.81" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="3.556" y1="1.27" x2="3.81" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="1.016" x2="3.81" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="1.27" x2="1.27" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="1.27" x2="-1.016" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="1.016" x2="-1.016" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="1.27" x2="-1.27" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="1.016" x2="-3.556" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="1.27" x2="-3.556" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="-1.27" x2="1.27" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-1.016" x2="-1.016" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="-1.27" x2="-1.27" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="-1.016" x2="-3.556" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="-1.27" x2="-1.016" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="-1.27" x2="-3.556" y2="-1.27" width="0.1524" layer="21"/>
+<pad name="1" x="-2.54" y="0" drill="0.9144" shape="long" rot="R90"/>
+<pad name="2" x="0" y="0" drill="0.9144" shape="long" rot="R90"/>
+<pad name="3" x="2.54" y="0" drill="0.9144" shape="long" rot="R90"/>
+<text x="-3.556" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.54" y="-2.667" size="0.9906" layer="21" ratio="12">1</text>
+<text x="0" y="-2.667" size="0.9906" layer="21" ratio="12">2</text>
+<text x="2.54" y="-2.667" size="0.9906" layer="21" ratio="12">3</text>
+<text x="-3.556" y="-4.318" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="-2.8448" y1="-0.3048" x2="-2.2352" y2="0.3048" layer="51"/>
+<rectangle x1="-0.3048" y1="-0.3048" x2="0.3048" y2="0.3048" layer="51"/>
+<rectangle x1="2.2352" y1="-0.3048" x2="2.8448" y2="0.3048" layer="51"/>
+</package>
+</packages>
+<symbols>
+<symbol name="JP3E">
+<wire x1="2.54" y1="0" x2="2.54" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="1.27" width="0.4064" layer="94"/>
+<wire x1="0" y1="2.54" x2="0" y2="1.27" width="0.4064" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="-2.54" y2="1.27" width="0.4064" layer="94"/>
+<wire x1="-3.175" y1="0" x2="3.175" y2="0" width="0.4064" layer="94"/>
+<wire x1="3.175" y1="0" x2="3.175" y2="0.635" width="0.4064" layer="94"/>
+<wire x1="3.175" y1="0.635" x2="-3.175" y2="0.635" width="0.4064" layer="94"/>
+<wire x1="-3.175" y1="0.635" x2="-3.175" y2="0" width="0.4064" layer="94"/>
+<text x="-3.81" y="0" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="5.715" y="0" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="2" x="0" y="-2.54" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="3" x="2.54" y="-2.54" visible="pad" length="short" direction="pas" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="JP2E" prefix="JP" uservalue="yes">
+<description>&lt;b&gt;JUMPER&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="JP3E" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="JP2">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="2"/>
+<connect gate="1" pin="3" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -16399,11 +16414,7 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <part name="SUPPLY19" library="supply2" deviceset="+5V" device=""/>
 <part name="SUPPLY3" library="supply2" deviceset="+5V/2" device=""/>
 <part name="SUPPLY20" library="supply2" deviceset="+5V/2" device=""/>
-<part name="SUPPLY7" library="supply2" deviceset="+5V/2" device=""/>
-<part name="SUPPLY9" library="supply2" deviceset="+5V/2" device=""/>
-<part name="SUPPLY4" library="supply2" deviceset="+5V/2" device=""/>
 <part name="X1" library="con-subd" deviceset="M25?S" device="H"/>
-<part name="JP1" library="jumper" deviceset="JP1Q" device=""/>
 <part name="SUPPLY11" library="supply2" deviceset="+5V/2" device=""/>
 <part name="SUPPLY12" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY14" library="supply2" deviceset="+5V/2" device=""/>
@@ -16467,6 +16478,12 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <part name="SUPPLY55" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY56" library="supply2" deviceset="DGND" device=""/>
 <part name="SUPPLY57" library="supply2" deviceset="DGND" device=""/>
+<part name="R16" library="resistor" deviceset="R-US_" device="0204/2V" value="200k"/>
+<part name="LED2" library="led" deviceset="LED" device="3MM"/>
+<part name="R17" library="resistor" deviceset="R-US_" device="0204/2V" value="200k"/>
+<part name="LED3" library="led" deviceset="LED" device="3MM"/>
+<part name="SUPPLY58" library="supply2" deviceset="DGND" device=""/>
+<part name="JP1" library="jumper" deviceset="JP2E" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -16480,8 +16497,8 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <instance part="U$2" gate="G$1" x="-40.64" y="93.98"/>
 <instance part="J1" gate="G$1" x="71.12" y="0"/>
 <instance part="C3" gate="G$1" x="45.72" y="111.76"/>
-<instance part="C4" gate="G$1" x="15.24" y="129.54"/>
-<instance part="C5" gate="G$1" x="27.94" y="132.08"/>
+<instance part="C4" gate="G$1" x="-7.62" y="88.9"/>
+<instance part="C5" gate="G$1" x="5.08" y="88.9"/>
 <instance part="SUPPLY13" gate="GND" x="147.32" y="-96.52"/>
 <instance part="CN1" gate="G$1" x="355.6" y="-17.78" rot="MR0"/>
 <instance part="D1" gate="G$1" x="337.82" y="-17.78" rot="R90"/>
@@ -16493,10 +16510,10 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <instance part="SUPPLY2" gate="GND" x="266.7" y="-30.48"/>
 <instance part="SUPPLY17" gate="G$1" x="35.56" y="-15.24"/>
 <instance part="SUPPLY1" gate="G$1" x="-2.54" y="35.56"/>
-<instance part="SUPPLY5" gate="G$1" x="0" y="91.44"/>
+<instance part="SUPPLY5" gate="G$1" x="-20.32" y="91.44"/>
 <instance part="SUPPLY6" gate="G$1" x="68.58" y="-5.08"/>
-<instance part="SUPPLY8" gate="G$1" x="15.24" y="121.92"/>
-<instance part="SUPPLY10" gate="G$1" x="27.94" y="124.46"/>
+<instance part="SUPPLY8" gate="G$1" x="-7.62" y="78.74"/>
+<instance part="SUPPLY10" gate="G$1" x="5.08" y="78.74"/>
 <instance part="SUPPLY18" gate="G$1" x="325.12" y="-30.48"/>
 <instance part="C12" gate="G$1" x="254" y="-17.78"/>
 <instance part="L1" gate="G$1" x="243.84" y="-7.62"/>
@@ -16505,10 +16522,7 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <instance part="C15" gate="G$1" x="218.44" y="-17.78"/>
 <instance part="SUPPLY19" gate="+5V" x="218.44" y="-5.08"/>
 <instance part="SUPPLY3" gate="G$1" x="304.8" y="-5.08"/>
-<instance part="SUPPLY20" gate="G$1" x="35.56" y="111.76"/>
-<instance part="SUPPLY7" gate="G$1" x="15.24" y="134.62"/>
-<instance part="SUPPLY9" gate="G$1" x="27.94" y="137.16"/>
-<instance part="SUPPLY4" gate="G$1" x="-2.54" y="124.46"/>
+<instance part="SUPPLY20" gate="G$1" x="40.64" y="116.84" rot="R270"/>
 <instance part="X1" gate="-1" x="149.86" y="-78.74"/>
 <instance part="X1" gate="-4" x="149.86" y="-81.28"/>
 <instance part="X1" gate="-6" x="149.86" y="-83.82"/>
@@ -16530,7 +16544,6 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <instance part="X1" gate="-24" x="-60.96" y="38.1" rot="R180"/>
 <instance part="X1" gate="-25" x="-60.96" y="12.7" rot="R180"/>
 <instance part="X1" gate="-17" x="215.9" y="-7.62" rot="R180"/>
-<instance part="JP1" gate="A" x="-2.54" y="114.3"/>
 <instance part="SUPPLY11" gate="G$1" x="106.68" y="124.46"/>
 <instance part="SUPPLY12" gate="GND" x="124.46" y="114.3"/>
 <instance part="SUPPLY14" gate="G$1" x="106.68" y="111.76"/>
@@ -16601,6 +16614,12 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <instance part="SUPPLY55" gate="GND" x="114.3" y="-27.94"/>
 <instance part="SUPPLY56" gate="G$1" x="96.52" y="-2.54"/>
 <instance part="SUPPLY57" gate="G$1" x="96.52" y="-17.78"/>
+<instance part="R16" gate="G$1" x="347.98" y="-12.7" rot="R90"/>
+<instance part="LED2" gate="G$1" x="347.98" y="-20.32"/>
+<instance part="R17" gate="G$1" x="63.5" y="-2.54" rot="R90"/>
+<instance part="LED3" gate="G$1" x="63.5" y="-10.16"/>
+<instance part="SUPPLY58" gate="G$1" x="63.5" y="-17.78"/>
+<instance part="JP1" gate="1" x="35.56" y="119.38"/>
 </instances>
 <busses>
 </busses>
@@ -16835,7 +16854,7 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="GND"/>
-<wire x1="-33.02" y1="93.98" x2="0" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="-33.02" y1="93.98" x2="-20.32" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="SUPPLY5" gate="G$1" pin="DGND"/>
 </segment>
 <segment>
@@ -16846,16 +16865,19 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <segment>
 <pinref part="C4" gate="G$1" pin="2"/>
 <pinref part="SUPPLY8" gate="G$1" pin="DGND"/>
+<wire x1="-7.62" y1="81.28" x2="-7.62" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C5" gate="G$1" pin="2"/>
 <pinref part="SUPPLY10" gate="G$1" pin="DGND"/>
+<wire x1="5.08" y1="81.28" x2="5.08" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="CN1" gate="G$1" pin="GND"/>
 <wire x1="353.06" y1="-20.32" x2="353.06" y2="-27.94" width="0.1524" layer="91"/>
-<wire x1="353.06" y1="-27.94" x2="337.82" y2="-27.94" width="0.1524" layer="91"/>
+<wire x1="353.06" y1="-27.94" x2="347.98" y2="-27.94" width="0.1524" layer="91"/>
 <pinref part="D1" gate="G$1" pin="A"/>
+<wire x1="347.98" y1="-27.94" x2="337.82" y2="-27.94" width="0.1524" layer="91"/>
 <wire x1="337.82" y1="-27.94" x2="325.12" y2="-27.94" width="0.1524" layer="91"/>
 <wire x1="337.82" y1="-20.32" x2="337.82" y2="-27.94" width="0.1524" layer="91"/>
 <junction x="337.82" y="-27.94"/>
@@ -16870,6 +16892,9 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <wire x1="304.8" y1="-27.94" x2="312.42" y2="-27.94" width="0.1524" layer="91"/>
 <junction x="312.42" y="-27.94"/>
 <pinref part="SUPPLY18" gate="G$1" pin="DGND"/>
+<pinref part="LED2" gate="G$1" pin="C"/>
+<wire x1="347.98" y1="-25.4" x2="347.98" y2="-27.94" width="0.1524" layer="91"/>
+<junction x="347.98" y="-27.94"/>
 </segment>
 <segment>
 <pinref part="R8" gate="G$1" pin="1"/>
@@ -16927,6 +16952,10 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <pinref part="OK7" gate="B" pin="C"/>
 <pinref part="SUPPLY57" gate="G$1" pin="DGND"/>
 </segment>
+<segment>
+<pinref part="LED3" gate="G$1" pin="C"/>
+<pinref part="SUPPLY58" gate="G$1" pin="DGND"/>
+</segment>
 </net>
 <net name="N$26" class="0">
 <segment>
@@ -16947,8 +16976,9 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <segment>
 <pinref part="CN1" gate="G$1" pin="PWR"/>
 <wire x1="353.06" y1="-15.24" x2="353.06" y2="-7.62" width="0.1524" layer="91"/>
-<wire x1="353.06" y1="-7.62" x2="337.82" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="353.06" y1="-7.62" x2="347.98" y2="-7.62" width="0.1524" layer="91"/>
 <pinref part="D1" gate="G$1" pin="C"/>
+<wire x1="347.98" y1="-7.62" x2="337.82" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="337.82" y1="-7.62" x2="325.12" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="337.82" y1="-15.24" x2="337.82" y2="-7.62" width="0.1524" layer="91"/>
 <junction x="337.82" y="-7.62"/>
@@ -16964,31 +16994,8 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <junction x="312.42" y="-7.62"/>
 <pinref part="SUPPLY3" gate="G$1" pin="+5V/2"/>
 <junction x="304.8" y="-7.62"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="VDD$1"/>
-<wire x1="35.56" y1="109.22" x2="35.56" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="VDD$2"/>
-<wire x1="35.56" y1="106.68" x2="38.1" y2="106.68" width="0.1524" layer="91"/>
-<junction x="35.56" y="106.68"/>
-<wire x1="38.1" y1="106.68" x2="40.64" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="106.68" x2="40.64" y2="114.3" width="0.1524" layer="91"/>
-<junction x="38.1" y="106.68"/>
-<pinref part="C3" gate="G$1" pin="1"/>
-<wire x1="40.64" y1="114.3" x2="45.72" y2="114.3" width="0.1524" layer="91"/>
-<pinref part="SUPPLY20" gate="G$1" pin="+5V/2"/>
-</segment>
-<segment>
-<pinref part="C4" gate="G$1" pin="1"/>
-<pinref part="SUPPLY7" gate="G$1" pin="+5V/2"/>
-</segment>
-<segment>
-<pinref part="C5" gate="G$1" pin="1"/>
-<pinref part="SUPPLY9" gate="G$1" pin="+5V/2"/>
-</segment>
-<segment>
-<pinref part="JP1" gate="A" pin="2"/>
-<pinref part="SUPPLY4" gate="G$1" pin="+5V/2"/>
+<pinref part="R16" gate="G$1" pin="2"/>
+<junction x="347.98" y="-7.62"/>
 </segment>
 <segment>
 <pinref part="SUPPLY11" gate="G$1" pin="+5V/2"/>
@@ -17038,13 +17045,19 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <pinref part="OK6" gate="B" pin="COL"/>
 <pinref part="SUPPLY47" gate="G$1" pin="+5V/2"/>
 </segment>
+<segment>
+<pinref part="SUPPLY20" gate="G$1" pin="+5V/2"/>
+<pinref part="JP1" gate="1" pin="3"/>
+</segment>
 </net>
 <net name="N$10" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="VCC"/>
-<pinref part="JP1" gate="A" pin="1"/>
 <wire x1="-33.02" y1="96.52" x2="-2.54" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="-2.54" y1="96.52" x2="-2.54" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="-2.54" y1="96.52" x2="-2.54" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="116.84" x2="33.02" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="109.22" x2="-2.54" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="JP1" gate="1" pin="1"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -17297,6 +17310,47 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <wire x1="83.82" y1="-10.16" x2="83.82" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="RC6"/>
 <wire x1="83.82" y1="27.94" x2="58.42" y2="27.94" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$41" class="0">
+<segment>
+<pinref part="R16" gate="G$1" pin="1"/>
+<pinref part="LED2" gate="G$1" pin="A"/>
+</segment>
+</net>
+<net name="N$42" class="0">
+<segment>
+<pinref part="R17" gate="G$1" pin="1"/>
+<pinref part="LED3" gate="G$1" pin="A"/>
+</segment>
+</net>
+<net name="N$43" class="0">
+<segment>
+<pinref part="J1" gate="G$1" pin="VBUS"/>
+<pinref part="R17" gate="G$1" pin="2"/>
+<wire x1="68.58" y1="2.54" x2="63.5" y2="2.54" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$45" class="0">
+<segment>
+<pinref part="C4" gate="G$1" pin="1"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+<wire x1="-7.62" y1="91.44" x2="2.54" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="91.44" x2="5.08" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="91.44" x2="2.54" y2="106.68" width="0.1524" layer="91"/>
+<junction x="2.54" y="91.44"/>
+<pinref part="U$1" gate="G$1" pin="VDD$1"/>
+<pinref part="U$1" gate="G$1" pin="VDD$2"/>
+<wire x1="35.56" y1="106.68" x2="38.1" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="106.68" x2="40.64" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="106.68" x2="40.64" y2="114.3" width="0.1524" layer="91"/>
+<junction x="38.1" y="106.68"/>
+<pinref part="C3" gate="G$1" pin="1"/>
+<wire x1="40.64" y1="114.3" x2="45.72" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="JP1" gate="1" pin="2"/>
+<wire x1="35.56" y1="116.84" x2="35.56" y2="106.68" width="0.1524" layer="91"/>
+<junction x="35.56" y="106.68"/>
+<wire x1="2.54" y1="106.68" x2="35.56" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
