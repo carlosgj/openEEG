@@ -7880,6 +7880,140 @@ http://www.micrel.com&lt;p&gt;
 </deviceset>
 </devicesets>
 </library>
+<library name="modEEG">
+<packages>
+<package name="DIN42802">
+<pad name="MNT@1" x="2.44601875" y="0" drill="1.4" shape="octagon"/>
+<pad name="MNT" x="-2.44601875" y="0" drill="1.4" shape="octagon"/>
+<pad name="P$1" x="0" y="-10.6553" drill="1.6" shape="octagon"/>
+<wire x1="-3.06831875" y1="1.27" x2="-3.06831875" y2="-7.5438" width="0.127" layer="21"/>
+<wire x1="-3.06831875" y1="-7.5438" x2="-1.5875" y2="-7.5438" width="0.127" layer="21"/>
+<wire x1="-1.5875" y1="-7.5438" x2="-1.5875" y2="-12.2428" width="0.127" layer="21"/>
+<wire x1="-1.5875" y1="-12.2428" x2="1.5875" y2="-12.2428" width="0.127" layer="21"/>
+<wire x1="1.5875" y1="-12.2428" x2="1.5875" y2="-7.5438" width="0.127" layer="21"/>
+<wire x1="1.5875" y1="-7.5438" x2="3.06831875" y2="-7.5438" width="0.127" layer="21"/>
+<wire x1="3.06831875" y1="-7.5438" x2="3.06831875" y2="1.27" width="0.127" layer="21"/>
+<wire x1="3.06831875" y1="1.27" x2="-3.06831875" y2="1.27" width="0.127" layer="21"/>
+<wire x1="-3.06831875" y1="1.27" x2="-3.06831875" y2="6.35" width="0.127" layer="21"/>
+<wire x1="-3.06831875" y1="6.35" x2="3.06831875" y2="6.35" width="0.127" layer="21"/>
+<wire x1="3.06831875" y1="6.35" x2="3.06831875" y2="1.27" width="0.127" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="DIN42802">
+<pin name="P$1" x="0" y="0" length="middle"/>
+<wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.254" layer="94" curve="-180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="DIN42802">
+<gates>
+<gate name="G$1" symbol="DIN42802" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="DIN42802">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="con-samtec">
+<description>&lt;b&gt;Samtec Connectors&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="TSW-102-02-S-S">
+<description>&lt;b&gt;THROUGH-HOLE .025" SQ POST HEADER&lt;/b&gt;&lt;p&gt;
+Source: Samtec TSW.pdf</description>
+<wire x1="-2.669" y1="1.155" x2="2.669" y2="1.155" width="0.2032" layer="21"/>
+<wire x1="2.669" y1="1.155" x2="2.669" y2="-1.155" width="0.2032" layer="21"/>
+<wire x1="2.669" y1="-1.155" x2="-2.669" y2="-1.155" width="0.2032" layer="21"/>
+<wire x1="-2.669" y1="-1.155" x2="-2.669" y2="1.155" width="0.2032" layer="21"/>
+<pad name="1" x="1.27" y="0" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="2" x="-1.27" y="0" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<text x="1.012" y="-2.498" size="1.1" layer="21" font="vector" rot="SR0">1</text>
+<text x="-3.175" y="-1.27" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="4.445" y="-1.27" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-1.62" y1="-0.35" x2="-0.92" y2="0.35" layer="51"/>
+<rectangle x1="0.92" y1="-0.35" x2="1.62" y2="0.35" layer="51"/>
+</package>
+<package name="TSW-102-02-S-S-RA">
+<description>&lt;b&gt;THROUGH-HOLE .025" SQ POST HEADER&lt;/b&gt;&lt;p&gt;
+Source: Samtec TSW.pdf</description>
+<wire x1="-2.669" y1="-2.046" x2="2.669" y2="-2.046" width="0.2032" layer="21"/>
+<wire x1="2.669" y1="-2.046" x2="2.669" y2="-0.106" width="0.2032" layer="21"/>
+<wire x1="2.669" y1="-0.106" x2="-2.669" y2="-0.106" width="0.2032" layer="21"/>
+<wire x1="-2.669" y1="-0.106" x2="-2.669" y2="-2.046" width="0.2032" layer="21"/>
+<pad name="1" x="1.27" y="1.524" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="2" x="-1.27" y="1.524" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<text x="-3.175" y="-7.62" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="4.445" y="-7.62" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<text x="2.552" y="1.152" size="1.1" layer="21" font="vector" rot="SR0">1</text>
+<rectangle x1="-1.524" y1="0" x2="-1.016" y2="1.778" layer="51"/>
+<rectangle x1="1.016" y1="0" x2="1.524" y2="1.778" layer="51"/>
+<rectangle x1="-1.524" y1="-7.89" x2="-1.016" y2="-2.04" layer="21"/>
+<rectangle x1="1.016" y1="-7.89" x2="1.524" y2="-2.04" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="MPINV">
+<text x="-1.27" y="1.27" size="1.778" layer="96">&gt;VALUE</text>
+<text x="2.54" y="-0.762" size="1.524" layer="95">&gt;NAME</text>
+<rectangle x1="0" y1="-0.254" x2="1.778" y2="0.254" layer="94"/>
+<pin name="1" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+<symbol name="MPIN">
+<text x="2.54" y="-0.762" size="1.524" layer="95">&gt;NAME</text>
+<rectangle x1="0" y1="-0.254" x2="1.778" y2="0.254" layer="94"/>
+<pin name="1" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="TSW-102-02-S-S" prefix="X">
+<description>&lt;b&gt;THROUGH-HOLE .025" SQ POST HEADER&lt;/b&gt;&lt;p&gt;
+Source: Samtec TSW.pdf</description>
+<gates>
+<gate name="-1" symbol="MPINV" x="-1.27" y="0" addlevel="always"/>
+<gate name="-2" symbol="MPIN" x="-1.27" y="-2.54" addlevel="always"/>
+</gates>
+<devices>
+<device name="" package="TSW-102-02-S-S">
+<connects>
+<connect gate="-1" pin="1" pad="1"/>
+<connect gate="-2" pin="1" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-RA" package="TSW-102-02-S-S-RA">
+<connects>
+<connect gate="-1" pin="1" pad="1"/>
+<connect gate="-2" pin="1" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -7894,8 +8028,6 @@ http://www.micrel.com&lt;p&gt;
 <part name="U$19" library="SUPPLY2" deviceset="AGND" device=""/>
 <part name="R217" library="resistor" deviceset="R-US_" device="0207/2V" value="2k2"/>
 <part name="R218" library="resistor" deviceset="R-US_" device="0207/2V" value="10k"/>
-<part name="CH1-" library="WIREPAD" deviceset="1,6/0,8" device="" value=" "/>
-<part name="CH1+" library="WIREPAD" deviceset="1,6/0,8" device="" value=" "/>
 <part name="U$26" library="SUPPLY2" deviceset="+5V/2" device=""/>
 <part name="C221" library="resistor" deviceset="C-US" device="C1206" value="1µF"/>
 <part name="C218" library="resistor" deviceset="C-US" device="C1206" value="100nF"/>
@@ -7959,8 +8091,6 @@ http://www.micrel.com&lt;p&gt;
 <part name="U$21" library="SUPPLY2" deviceset="AGND" device=""/>
 <part name="R5" library="resistor" deviceset="R-US_" device="0207/2V" value="2k2"/>
 <part name="R6" library="resistor" deviceset="R-US_" device="0207/2V" value="10k"/>
-<part name="CH2-" library="WIREPAD" deviceset="1,6/0,8" device="" value=" "/>
-<part name="CH2+" library="WIREPAD" deviceset="1,6/0,8" device="" value=" "/>
 <part name="U$22" library="SUPPLY2" deviceset="+5V/2" device=""/>
 <part name="C2" library="resistor" deviceset="C-US" device="C1206" value="1µF"/>
 <part name="C3" library="resistor" deviceset="C-US" device="C1206" value="100nF"/>
@@ -8033,6 +8163,22 @@ http://www.micrel.com&lt;p&gt;
 <part name="X2" library="con-subd" deviceset="F25?S" device="HP"/>
 <part name="U$11" library="SUPPLY2" deviceset="AGND" device=""/>
 <part name="IC1" library="v-reg-micrel" deviceset="MIC5219XX" device=""/>
+<part name="C1-" library="modEEG" deviceset="DIN42802" device=""/>
+<part name="C1+" library="modEEG" deviceset="DIN42802" device=""/>
+<part name="C2-" library="modEEG" deviceset="DIN42802" device=""/>
+<part name="C2+" library="modEEG" deviceset="DIN42802" device=""/>
+<part name="1-PWR" library="con-samtec" deviceset="TSW-102-02-S-S" device="-RA"/>
+<part name="1+PWR" library="con-samtec" deviceset="TSW-102-02-S-S" device="-RA"/>
+<part name="2-PWR" library="con-samtec" deviceset="TSW-102-02-S-S" device="-RA"/>
+<part name="2+PWR" library="con-samtec" deviceset="TSW-102-02-S-S" device="-RA"/>
+<part name="U$12" library="SUPPLY2" deviceset="+5V/2" device=""/>
+<part name="U$14" library="SUPPLY2" deviceset="+5V/2" device=""/>
+<part name="U$25" library="SUPPLY2" deviceset="+5V/2" device=""/>
+<part name="U$27" library="SUPPLY2" deviceset="+5V/2" device=""/>
+<part name="U$38" library="SUPPLY2" deviceset="AGND" device=""/>
+<part name="U$42" library="SUPPLY2" deviceset="AGND" device=""/>
+<part name="U$45" library="SUPPLY2" deviceset="AGND" device=""/>
+<part name="U$46" library="SUPPLY2" deviceset="AGND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8084,8 +8230,6 @@ http://www.micrel.com&lt;p&gt;
 <attribute name="NAME" x="86.36" y="111.76" size="1.778" layer="95"/>
 <attribute name="VALUE" x="86.36" y="105.41" size="1.778" layer="96"/>
 </instance>
-<instance part="CH1-" gate="P" x="27.94" y="172.72"/>
-<instance part="CH1+" gate="P" x="27.94" y="137.16"/>
 <instance part="U$26" gate="G$1" x="167.64" y="170.18"/>
 <instance part="C221" gate="G$1" x="185.42" y="157.48" rot="R270"/>
 <instance part="C218" gate="G$1" x="170.18" y="147.32" smashed="yes" rot="R90">
@@ -8224,8 +8368,6 @@ http://www.micrel.com&lt;p&gt;
 <attribute name="NAME" x="86.36" y="0" size="1.778" layer="95"/>
 <attribute name="VALUE" x="86.36" y="-6.35" size="1.778" layer="96"/>
 </instance>
-<instance part="CH2-" gate="P" x="27.94" y="60.96"/>
-<instance part="CH2+" gate="P" x="27.94" y="25.4"/>
 <instance part="U$22" gate="G$1" x="167.64" y="58.42"/>
 <instance part="C2" gate="G$1" x="185.42" y="45.72" rot="R270"/>
 <instance part="C3" gate="G$1" x="170.18" y="35.56" smashed="yes" rot="R90">
@@ -8393,6 +8535,26 @@ http://www.micrel.com&lt;p&gt;
 <instance part="U$11" gate="G$1" x="469.9" y="25.4"/>
 <instance part="IC1" gate="G1" x="490.22" y="116.84" rot="MR0"/>
 <instance part="IC204" gate="A" x="109.22" y="-2.54" rot="MR0"/>
+<instance part="C1-" gate="G$1" x="30.48" y="172.72" rot="R180"/>
+<instance part="C1+" gate="G$1" x="30.48" y="137.16" rot="R180"/>
+<instance part="C2-" gate="G$1" x="30.48" y="60.96" rot="R180"/>
+<instance part="C2+" gate="G$1" x="30.48" y="25.4" rot="R180"/>
+<instance part="1-PWR" gate="-1" x="24.13" y="165.1" rot="R180"/>
+<instance part="1-PWR" gate="-2" x="24.13" y="167.64" rot="R180"/>
+<instance part="1+PWR" gate="-1" x="24.13" y="144.78" rot="R180"/>
+<instance part="1+PWR" gate="-2" x="24.13" y="147.32" rot="R180"/>
+<instance part="2-PWR" gate="-1" x="24.13" y="53.34" rot="R180"/>
+<instance part="2-PWR" gate="-2" x="24.13" y="55.88" rot="R180"/>
+<instance part="2+PWR" gate="-1" x="24.13" y="33.02" rot="R180"/>
+<instance part="2+PWR" gate="-2" x="24.13" y="35.56" rot="R180"/>
+<instance part="U$12" gate="G$1" x="31.75" y="167.64" rot="R270"/>
+<instance part="U$14" gate="G$1" x="31.75" y="147.32" rot="R270"/>
+<instance part="U$25" gate="G$1" x="31.75" y="55.88" rot="R270"/>
+<instance part="U$27" gate="G$1" x="31.75" y="35.56" rot="R270"/>
+<instance part="U$38" gate="G$1" x="29.21" y="30.48"/>
+<instance part="U$42" gate="G$1" x="29.21" y="50.8"/>
+<instance part="U$45" gate="G$1" x="29.21" y="142.24"/>
+<instance part="U$46" gate="G$1" x="31.75" y="162.56"/>
 </instances>
 <busses>
 </busses>
@@ -8520,6 +8682,26 @@ http://www.micrel.com&lt;p&gt;
 <segment>
 <pinref part="IC1" gate="G1" pin="GND"/>
 <pinref part="U$44" gate="G$1" pin="AGND"/>
+</segment>
+<segment>
+<pinref part="2+PWR" gate="-1" pin="1"/>
+<pinref part="U$38" gate="G$1" pin="AGND"/>
+<wire x1="29.21" y1="33.02" x2="26.67" y2="33.02" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="2-PWR" gate="-1" pin="1"/>
+<pinref part="U$42" gate="G$1" pin="AGND"/>
+<wire x1="29.21" y1="53.34" x2="26.67" y2="53.34" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="1+PWR" gate="-1" pin="1"/>
+<pinref part="U$45" gate="G$1" pin="AGND"/>
+<wire x1="29.21" y1="144.78" x2="26.67" y2="144.78" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="1-PWR" gate="-1" pin="1"/>
+<pinref part="U$46" gate="G$1" pin="AGND"/>
+<wire x1="31.75" y1="165.1" x2="26.67" y2="165.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCOM" class="0">
@@ -8802,6 +8984,26 @@ http://www.micrel.com&lt;p&gt;
 <wire x1="500.38" y1="116.84" x2="500.38" y2="121.92" width="0.1524" layer="91"/>
 <junction x="500.38" y="121.92"/>
 </segment>
+<segment>
+<pinref part="1-PWR" gate="-2" pin="1"/>
+<pinref part="U$12" gate="G$1" pin="+5V/2"/>
+<wire x1="29.21" y1="167.64" x2="26.67" y2="167.64" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="1+PWR" gate="-2" pin="1"/>
+<pinref part="U$14" gate="G$1" pin="+5V/2"/>
+<wire x1="29.21" y1="147.32" x2="26.67" y2="147.32" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="2-PWR" gate="-2" pin="1"/>
+<pinref part="U$25" gate="G$1" pin="+5V/2"/>
+<wire x1="29.21" y1="55.88" x2="26.67" y2="55.88" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="2+PWR" gate="-2" pin="1"/>
+<pinref part="U$27" gate="G$1" pin="+5V/2"/>
+<wire x1="29.21" y1="35.56" x2="26.67" y2="35.56" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$25" class="0">
 <segment>
@@ -8932,14 +9134,14 @@ http://www.micrel.com&lt;p&gt;
 <segment>
 <wire x1="30.48" y1="172.72" x2="33.02" y2="172.72" width="0.1524" layer="91"/>
 <pinref part="R204" gate="G$1" pin="1"/>
-<pinref part="CH1-" gate="P" pin="P"/>
+<pinref part="C1-" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 <net name="N$11" class="0">
 <segment>
 <wire x1="30.48" y1="137.16" x2="33.02" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="R203" gate="G$1" pin="1"/>
-<pinref part="CH1+" gate="P" pin="P"/>
+<pinref part="C1+" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 <net name="N$28" class="0">
@@ -9288,14 +9490,14 @@ http://www.micrel.com&lt;p&gt;
 <segment>
 <wire x1="30.48" y1="60.96" x2="33.02" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="R8" gate="G$1" pin="1"/>
-<pinref part="CH2-" gate="P" pin="P"/>
+<pinref part="C2-" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 <net name="N$26" class="0">
 <segment>
 <wire x1="30.48" y1="25.4" x2="33.02" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="R11" gate="G$1" pin="1"/>
-<pinref part="CH2+" gate="P" pin="P"/>
+<pinref part="C2+" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 <net name="N$30" class="0">

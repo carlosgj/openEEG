@@ -9693,6 +9693,49 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="modEEG">
+<packages>
+<package name="DIN42802">
+<pad name="MNT@1" x="2.54" y="0" drill="1.4" shape="octagon"/>
+<pad name="MNT" x="-2.54" y="0" drill="1.4" shape="octagon"/>
+<pad name="P$1" x="0" y="-10.16" drill="1.6" shape="octagon"/>
+<wire x1="-3.175" y1="1.27" x2="-3.175" y2="-7.5438" width="0.127" layer="21"/>
+<wire x1="-3.175" y1="-7.5438" x2="-1.5875" y2="-7.5438" width="0.127" layer="21"/>
+<wire x1="-1.5875" y1="-7.5438" x2="-1.5875" y2="-11.684" width="0.127" layer="21"/>
+<wire x1="-1.5875" y1="-11.684" x2="1.5875" y2="-11.684" width="0.127" layer="21"/>
+<wire x1="1.5875" y1="-11.684" x2="1.5875" y2="-7.5438" width="0.127" layer="21"/>
+<wire x1="1.5875" y1="-7.5438" x2="3.175" y2="-7.5438" width="0.127" layer="21"/>
+<wire x1="3.175" y1="-7.5438" x2="3.175" y2="1.27" width="0.127" layer="21"/>
+<wire x1="3.175" y1="1.27" x2="-3.175" y2="1.27" width="0.127" layer="21"/>
+<wire x1="-3.175" y1="1.27" x2="-3.175" y2="7.366" width="0.127" layer="21"/>
+<wire x1="-3.175" y1="7.366" x2="3.175" y2="7.366" width="0.127" layer="21"/>
+<wire x1="3.175" y1="7.366" x2="3.175" y2="1.27" width="0.127" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="DIN42802">
+<pin name="P$1" x="0" y="0" length="middle"/>
+<wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.254" layer="94" curve="-180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="DIN42802">
+<gates>
+<gate name="G$1" symbol="DIN42802" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="DIN42802">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -9724,7 +9767,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="C5" library="resistor" deviceset="C-EU" device="050-025X075" value="1nF"/>
 <part name="C6" library="resistor" deviceset="C-EU" device="050-025X075" value="1nF"/>
 <part name="SUPPLY8" library="supply2" deviceset="GND" device=""/>
-<part name="RLD_OUT" library="testpad" deviceset="TP" device="PAD1-17"/>
 <part name="VCOM" library="testpad" deviceset="TP" device="PAD1-17"/>
 <part name="SUPPLY9" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY10" library="supply2" deviceset="+5V" device=""/>
@@ -9737,6 +9779,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="MON_RLD" library="SparkFun-Connectors" deviceset="BNC" device="PTH"/>
 <part name="RLD_COM" library="testpad" deviceset="TP" device="PAD1-17"/>
 <part name="C9" library="resistor" deviceset="C-EU" device="050-025X075" value="0.01uf"/>
+<part name="RLD_OUT" library="modEEG" deviceset="DIN42802" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9766,7 +9809,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="C5" gate="G$1" x="58.42" y="-22.86" rot="R90"/>
 <instance part="C6" gate="G$1" x="58.42" y="0" rot="R90"/>
 <instance part="SUPPLY8" gate="GND" x="12.7" y="-20.32"/>
-<instance part="RLD_OUT" gate="G$1" x="76.2" y="-7.62"/>
 <instance part="VCOM" gate="G$1" x="2.54" y="-5.08"/>
 <instance part="SUPPLY9" gate="GND" x="119.38" y="50.8"/>
 <instance part="SUPPLY10" gate="+5V" x="119.38" y="81.28"/>
@@ -9789,6 +9831,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="MON_RLD" gate="G$1" x="71.12" y="-20.32"/>
 <instance part="RLD_COM" gate="G$1" x="30.48" y="-5.08"/>
 <instance part="C9" gate="G$1" x="-30.48" y="63.5"/>
+<instance part="RLD_OUT" gate="G$1" x="76.2" y="-10.16" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -10006,10 +10049,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="C6" gate="G$1" pin="2"/>
 <wire x1="63.5" y1="-10.16" x2="63.5" y2="0" width="0.1524" layer="91"/>
 <junction x="63.5" y="-10.16"/>
-<pinref part="RLD_OUT" gate="G$1" pin="TP"/>
 <wire x1="63.5" y1="-10.16" x2="76.2" y2="-10.16" width="0.1524" layer="91"/>
 <pinref part="MON_RLD" gate="G$1" pin="OUT"/>
 <wire x1="76.2" y1="-20.32" x2="76.2" y2="-10.16" width="0.1524" layer="91"/>
+<pinref part="RLD_OUT" gate="G$1" pin="P$1"/>
 <junction x="76.2" y="-10.16"/>
 </segment>
 </net>
