@@ -24,11 +24,11 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 
-#define PORT_PIN_SCK PORTCbits.RC7
-#define TRIS_PIN_SCK TRISCbits.TRISC7
+#define PORT_PIN_SCK PORTCbits.RC0
+#define TRIS_PIN_SCK TRISCbits.TRISC0
 
-#define PORT_PIN_CNV PORTCbits.RC6
-#define TRIS_PIN_CNV TRISCbits.TRISC6
+#define PORT_PIN_CNV PORTCbits.RC1
+#define TRIS_PIN_CNV TRISCbits.TRISC1
 
 #endif	/* XC_HEADER_TEMPLATE_H */
 
