@@ -12,8 +12,14 @@
 
 void setup(void);
 void takeReading(void);
+void sendData(void);
+void sendByte(unsigned char byte);
 
 union sampleBufferBit sampleBuffer[16];
+char freshDataFlag = FALSE;
+char mode = MODE_STANDBY;
+unsigned int sampleDelay = 100; //In ms
+union timestamp lastSampleTimestamp; //In 10s of us
 
 void main(void) {
     setup();
@@ -26,6 +32,12 @@ void main(void) {
 void setup(void){
     ADCON0bits.ADON=FALSE; //Disable A/D
     ADCON1=0b00001111; //Set all AD to digital I/O
+    T0CONbits.TMR0ON =TRUE;
+    T0CONbits.T08BIT=FALSE;
+    T0CONbits.T0CS=FALSE;
+    T0CONbits.PSA=FALSE;
+    T0CONbits.T0PS = 0b101; //1/64 prescale
+    
     TRIS_PIN_SCK = OUTPUT;
     PORT_PIN_SCK = TRUE; //SCK idles high
     TRIS_PIN_CNV = OUTPUT;
@@ -38,6 +50,8 @@ void setup(void){
 
 void takeReading(void){
     PORT_PIN_CNV = TRUE; //Begin conversion
+    lastSampleTimestamp.lower=TMR0L;
+    lastSampleTimestamp.upper=TMR0H;
     PORT_PIN_SCK = TRUE; //Just to be sure
     //TODO: wait at least 710 ns (AD7902 p. 5 - tconv)
     asm("NOP");
@@ -64,9 +78,9 @@ void takeReading(void){
         asm("NOP"); //1 IC is ~ 166 ns ((1/24 MHz)*4) so this is more than necessary.
 //        sampleBuffer[i].rd = PORTD;
 //        sampleBuffer[i].rb = PORTB;
+        PORT_PIN_SCK = TRUE;//Reset
         sampleBuffer[i].rd = 0xff;
         sampleBuffer[i].rb = 0xff;
     }while(i);
-    
-    
+    freshDataFlag=TRUE;
 }

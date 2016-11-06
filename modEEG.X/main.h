@@ -70,6 +70,10 @@
 
 #define _XTAL_FREQ 24000000
 
+#define MODE_STANDBY 0
+#define MODE_ONESHOT 1
+#define MODE_CONTINUOUS 2
+
 typedef union sampleBufferBit {
     unsigned int all;
 
@@ -79,6 +83,13 @@ typedef union sampleBufferBit {
     };
 };
 
+typedef union timestamp{
+    unsigned int all;
+    struct{
+        unsigned char lower;
+        unsigned char upper;
+    };
+};
 
 #endif	/* XC_HEADER_TEMPLATE_H */
 

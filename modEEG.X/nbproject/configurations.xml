@@ -6,7 +6,6 @@
                    projectFiles="true">
       <itemPath>pindefs.h</itemPath>
       <itemPath>main.h</itemPath>
-      <itemPath>usb_config.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

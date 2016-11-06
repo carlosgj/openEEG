@@ -5279,7 +5279,7 @@ extern __nonreentrant void _delay3(unsigned char);
 
 #pragma config EBTRB = OFF
 
-# 73
+# 77
 typedef union sampleBufferBit {
 unsigned int all;
 
@@ -5289,11 +5289,25 @@ unsigned char rb;
 };
 };
 
+typedef union timestamp{
+unsigned int all;
+struct{
+unsigned char lower;
+unsigned char upper;
+};
+};
+
 # 13 "main.c"
 void setup(void);
 void takeReading(void);
+void sendData(void);
+void sendByte(unsigned char byte);
 
 union sampleBufferBit sampleBuffer[16];
+char freshDataFlag = 0;
+char mode = 0;
+unsigned int sampleDelay = 100;
+union timestamp lastSampleTimestamp;
 
 void main(void) {
 setup();
@@ -5306,6 +5320,12 @@ return;
 void setup(void){
 ADCON0bits.ADON=0;
 ADCON1=0b00001111;
+T0CONbits.TMR0ON =1;
+T0CONbits.T08BIT=0;
+T0CONbits.T0CS=0;
+T0CONbits.PSA=0;
+T0CONbits.T0PS = 0b101;
+
 TRISCbits.TRISC0 = 0;
 PORTCbits.RC0 = 1;
 TRISCbits.TRISC1 = 0;
@@ -5318,6 +5338,8 @@ sampleBuffer[i].all = (unsigned int)0;
 
 void takeReading(void){
 PORTCbits.RC1 = 1;
+lastSampleTimestamp.lower=TMR0L;
+lastSampleTimestamp.upper=TMR0H;
 PORTCbits.RC0 = 1;
 
 asm("NOP");
@@ -5344,9 +5366,9 @@ PORTCbits.RC0 = 0;
 asm("NOP");
 
 
+PORTCbits.RC0 = 1;
 sampleBuffer[i].rd = 0xff;
 sampleBuffer[i].rb = 0xff;
 }while(i);
-
-
+freshDataFlag=1;
 }

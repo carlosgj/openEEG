@@ -1,10 +1,16 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"76 main.h
+"80 main.h
 [s S529 `uc 1 `uc 1 ]
 [n S529 . rd rb ]
-"73
+"77
 [u S528 `ui 1 `S529 1 ]
 [n S528 sampleBufferBit all . ]
+"88
+[s S531 `uc 1 `uc 1 ]
+[n S531 . lower upper ]
+"86
+[u S530 `ui 1 `S531 1 ]
+[n S530 timestamp all . ]
 [p mainexit ]
 "13 main.c
 [v _setup `(v ~T0 @X0 0 ef ]
@@ -41,6 +47,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADCON0bits `VS425 ~T0 @X0 0 e@4034 ]
 "6957
 [v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
+"8449
+[s S505 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S505 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
+"8457
+[s S506 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S506 . T0PS0 T0PS1 T0PS2 ]
+"8448
+[u S504 `S505 1 `S506 1 ]
+[n S504 . . . ]
+"8463
+[v _T0CONbits `VS504 ~T0 @X0 0 e@4053 ]
 "4207
 [s S282 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S282 . TRISC0 TRISC1 TRISC2 . TRISC6 TRISC7 ]
@@ -75,6 +92,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S202 . . . . . . . ]
 "2863
 [v _PORTCbits `VS202 ~T0 @X0 0 e@3970 ]
+"8518
+[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+"8524
+[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -4137,162 +4158,219 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x EBTR2=OFF ]
 "63
 [p x EBTRB=OFF ]
-[; ;main.h: 73: typedef union sampleBufferBit {
-[; ;main.h: 74: unsigned int all;
-[; ;main.h: 76: struct {
-[; ;main.h: 77: unsigned char rd;
-[; ;main.h: 78: unsigned char rb;
-[; ;main.h: 79: };
-[; ;main.h: 80: };
+[; ;main.h: 77: typedef union sampleBufferBit {
+[; ;main.h: 78: unsigned int all;
+[; ;main.h: 80: struct {
+[; ;main.h: 81: unsigned char rd;
+[; ;main.h: 82: unsigned char rb;
+[; ;main.h: 83: };
+[; ;main.h: 84: };
+[; ;main.h: 86: typedef union timestamp{
+[; ;main.h: 87: unsigned int all;
+[; ;main.h: 88: struct{
+[; ;main.h: 89: unsigned char lower;
+[; ;main.h: 90: unsigned char upper;
+[; ;main.h: 91: };
+[; ;main.h: 92: };
 [; ;main.c: 13: void setup(void);
 [; ;main.c: 14: void takeReading(void);
-"16 main.c
+[; ;main.c: 15: void sendData(void);
+[; ;main.c: 16: void sendByte(unsigned char byte);
+"18 main.c
 [v _sampleBuffer `S528 ~T0 @X0 -> 16 `i e ]
-[; ;main.c: 16: union sampleBufferBit sampleBuffer[16];
-"18
+[; ;main.c: 18: union sampleBufferBit sampleBuffer[16];
+"19
+[v _freshDataFlag `uc ~T0 @X0 1 e ]
+[i _freshDataFlag
+-> -> 0 `i `uc
+]
+[; ;main.c: 19: char freshDataFlag = 0;
+"20
+[v _mode `uc ~T0 @X0 1 e ]
+[i _mode
+-> -> 0 `i `uc
+]
+[; ;main.c: 20: char mode = 0;
+"21
+[v _sampleDelay `ui ~T0 @X0 1 e ]
+[i _sampleDelay
+-> -> 100 `i `ui
+]
+[; ;main.c: 21: unsigned int sampleDelay = 100;
+"22
+[v _lastSampleTimestamp `S530 ~T0 @X0 1 e ]
+[; ;main.c: 22: union timestamp lastSampleTimestamp;
+"24
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 18: void main(void) {
+[; ;main.c: 24: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 19: setup();
-"19
+[; ;main.c: 25: setup();
+"25
 [e ( _setup ..  ]
-[; ;main.c: 20: while(1){
-"20
-[e :U 532 ]
-{
-[; ;main.c: 21: takeReading();
-"21
-[e ( _takeReading ..  ]
-"22
-}
-[e :U 531 ]
-"20
-[e $U 532  ]
-[e :U 533 ]
-[; ;main.c: 22: }
-[; ;main.c: 23: return;
-"23
-[e $UE 530  ]
-[; ;main.c: 24: }
-"24
-[e :UE 530 ]
-}
+[; ;main.c: 26: while(1){
 "26
+[e :U 534 ]
+{
+[; ;main.c: 27: takeReading();
+"27
+[e ( _takeReading ..  ]
+"28
+}
+[e :U 533 ]
+"26
+[e $U 534  ]
+[e :U 535 ]
+[; ;main.c: 28: }
+[; ;main.c: 29: return;
+"29
+[e $UE 532  ]
+[; ;main.c: 30: }
+"30
+[e :UE 532 ]
+}
+"32
 [v _setup `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 26: void setup(void){
+[; ;main.c: 32: void setup(void){
 [e :U _setup ]
 [f ]
-[; ;main.c: 27: ADCON0bits.ADON=0;
-"27
-[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
-[; ;main.c: 28: ADCON1=0b00001111;
-"28
-[e = _ADCON1 -> -> 15 `i `uc ]
-[; ;main.c: 29: TRISCbits.TRISC0 = 0;
-"29
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 30: PORTCbits.RC0 = 1;
-"30
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 31: TRISCbits.TRISC1 = 0;
-"31
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 32: PORTCbits.RC1 = 0;
-"32
-[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 33: for(unsigned char i=0;i<16;i++){
+[; ;main.c: 33: ADCON0bits.ADON=0;
 "33
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+[; ;main.c: 34: ADCON1=0b00001111;
+"34
+[e = _ADCON1 -> -> 15 `i `uc ]
+[; ;main.c: 35: T0CONbits.TMR0ON =1;
+"35
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 36: T0CONbits.T08BIT=0;
+"36
+[e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 37: T0CONbits.T0CS=0;
+"37
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 38: T0CONbits.PSA=0;
+"38
+[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 39: T0CONbits.T0PS = 0b101;
+"39
+[e = . . _T0CONbits 0 0 -> -> 5 `i `uc ]
+[; ;main.c: 41: TRISCbits.TRISC0 = 0;
+"41
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 42: PORTCbits.RC0 = 1;
+"42
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 43: TRISCbits.TRISC1 = 0;
+"43
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 44: PORTCbits.RC1 = 0;
+"44
+[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 45: for(unsigned char i=0;i<16;i++){
+"45
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 535  ]
-[e $U 536  ]
-[e :U 535 ]
+[e $ < -> _i `i -> 16 `i 537  ]
+[e $U 538  ]
+[e :U 537 ]
 {
-[; ;main.c: 34: sampleBuffer[i].all = (unsigned int)0;
-"34
+[; ;main.c: 46: sampleBuffer[i].all = (unsigned int)0;
+"46
 [e = . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 0 -> -> 0 `i `ui ]
-"35
+"47
 }
-"33
+"45
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 535  ]
-[e :U 536 ]
-"35
+[e $ < -> _i `i -> 16 `i 537  ]
+[e :U 538 ]
+"47
 }
-[; ;main.c: 35: }
-[; ;main.c: 37: }
-"37
-[e :UE 534 ]
+[; ;main.c: 47: }
+[; ;main.c: 49: }
+"49
+[e :UE 536 ]
 }
-"39
+"51
 [v _takeReading `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 39: void takeReading(void){
+[; ;main.c: 51: void takeReading(void){
 [e :U _takeReading ]
 [f ]
-[; ;main.c: 40: PORTCbits.RC1 = 1;
-"40
+[; ;main.c: 52: PORTCbits.RC1 = 1;
+"52
 [e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 41: PORTCbits.RC0 = 1;
-"41
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 43: asm("NOP");
-"43
-[; <" NOP ;# ">
-[; ;main.c: 44: asm("NOP");
-"44
-[; <" NOP ;# ">
-[; ;main.c: 45: asm("NOP");
-"45
-[; <" NOP ;# ">
-[; ;main.c: 46: asm("NOP");
-"46
-[; <" NOP ;# ">
-[; ;main.c: 47: PORTCbits.RC1 = 0;
-"47
-[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 50: asm("NOP");
-"50
-[; <" NOP ;# ">
-[; ;main.c: 55: sampleBuffer[15].rd = 0xff;
+[; ;main.c: 53: lastSampleTimestamp.lower=TMR0L;
+"53
+[e = . . _lastSampleTimestamp 1 0 _TMR0L ]
+[; ;main.c: 54: lastSampleTimestamp.upper=TMR0H;
+"54
+[e = . . _lastSampleTimestamp 1 1 _TMR0H ]
+[; ;main.c: 55: PORTCbits.RC0 = 1;
 "55
-[e = . . *U + &U _sampleBuffer * -> -> -> 15 `i `ui `ux -> -> # *U &U _sampleBuffer `ui `ux 1 0 -> -> 255 `i `uc ]
-[; ;main.c: 56: sampleBuffer[15].rb = 0xff;
-"56
-[e = . . *U + &U _sampleBuffer * -> -> -> 15 `i `ui `ux -> -> # *U &U _sampleBuffer `ui `ux 1 1 -> -> 255 `i `uc ]
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 57: asm("NOP");
+"57
+[; <" NOP ;# ">
+[; ;main.c: 58: asm("NOP");
+"58
+[; <" NOP ;# ">
+[; ;main.c: 59: asm("NOP");
 "59
-[v _i `uc ~T0 @X0 1 a ]
-[; ;main.c: 59: unsigned char i=15;
-[e = _i -> -> 15 `i `uc ]
-[; ;main.c: 60: do{
+[; <" NOP ;# ">
+[; ;main.c: 60: asm("NOP");
 "60
-[e :U 541 ]
-{
-[; ;main.c: 61: i--;
+[; <" NOP ;# ">
+[; ;main.c: 61: PORTCbits.RC1 = 0;
 "61
-[e -- _i -> -> 1 `i `uc ]
-[; ;main.c: 62: PORTCbits.RC0 = 0;
-"62
-[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
 [; ;main.c: 64: asm("NOP");
 "64
 [; <" NOP ;# ">
-[; ;main.c: 67: sampleBuffer[i].rd = 0xff;
-"67
-[e = . . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 1 0 -> -> 255 `i `uc ]
-[; ;main.c: 68: sampleBuffer[i].rb = 0xff;
-"68
-[e = . . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 1 1 -> -> 255 `i `uc ]
+[; ;main.c: 69: sampleBuffer[15].rd = 0xff;
 "69
+[e = . . *U + &U _sampleBuffer * -> -> -> 15 `i `ui `ux -> -> # *U &U _sampleBuffer `ui `ux 1 0 -> -> 255 `i `uc ]
+[; ;main.c: 70: sampleBuffer[15].rb = 0xff;
+"70
+[e = . . *U + &U _sampleBuffer * -> -> -> 15 `i `ui `ux -> -> # *U &U _sampleBuffer `ui `ux 1 1 -> -> 255 `i `uc ]
+"73
+[v _i `uc ~T0 @X0 1 a ]
+[; ;main.c: 73: unsigned char i=15;
+[e = _i -> -> 15 `i `uc ]
+[; ;main.c: 74: do{
+"74
+[e :U 543 ]
+{
+[; ;main.c: 75: i--;
+"75
+[e -- _i -> -> 1 `i `uc ]
+[; ;main.c: 76: PORTCbits.RC0 = 0;
+"76
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 78: asm("NOP");
+"78
+[; <" NOP ;# ">
+[; ;main.c: 81: PORTCbits.RC0 = 1;
+"81
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 82: sampleBuffer[i].rd = 0xff;
+"82
+[e = . . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 1 0 -> -> 255 `i `uc ]
+[; ;main.c: 83: sampleBuffer[i].rb = 0xff;
+"83
+[e = . . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 1 1 -> -> 255 `i `uc ]
+"84
 }
-[; ;main.c: 69: }while(i);
-[e $ != -> _i `i -> -> -> 0 `i `uc `i 541  ]
-[e :U 540 ]
-[; ;main.c: 72: }
-"72
-[e :UE 538 ]
+[; ;main.c: 84: }while(i);
+[e $ != -> _i `i -> -> -> 0 `i `uc `i 543  ]
+[e :U 542 ]
+[; ;main.c: 85: freshDataFlag=1;
+"85
+[e = _freshDataFlag -> -> 1 `i `uc ]
+[; ;main.c: 86: }
+"86
+[e :UE 540 ]
 }
