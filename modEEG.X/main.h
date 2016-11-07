@@ -69,10 +69,16 @@
 #define OUTPUT 0
 
 #define _XTAL_FREQ 24000000
+#define DELAY_FINAGLE 0
 
 #define MODE_STANDBY 0
 #define MODE_ONESHOT 1
 #define MODE_CONTINUOUS 2
+
+#define START_ACQ_COMMAND 0xA0
+#define STOP_ACQ_COMMAND 0xA1
+#define ONESHOT_COMMAND 0xA2
+#define SET_DELAY_COMMAND 0xA3
 
 typedef union sampleBufferBit {
     unsigned int all;
@@ -83,7 +89,7 @@ typedef union sampleBufferBit {
     };
 };
 
-typedef union timestamp{
+typedef union inttime{
     unsigned int all;
     struct{
         unsigned char lower;

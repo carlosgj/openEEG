@@ -5279,7 +5279,7 @@ extern __nonreentrant void _delay3(unsigned char);
 
 #pragma config EBTRB = OFF
 
-# 73
+# 83
 typedef union sampleBufferBit {
 unsigned int all;
 
@@ -5288,3 +5288,199 @@ unsigned char rd;
 unsigned char rb;
 };
 };
+
+typedef union inttime{
+unsigned int all;
+struct{
+unsigned char lower;
+unsigned char upper;
+};
+};
+
+# 13 "main.c"
+void setup(void);
+void takeReading(void);
+void sendData(void);
+unsigned int sendSerialByte(unsigned char byte);
+void delayms(unsigned int ms);
+void sendSerialStr(const char * str, unsigned char num);
+
+union sampleBufferBit sampleBuffer[16];
+char mode = 0;
+unsigned int sampleDelay = 100;
+union inttime lastSampleTimestamp;
+
+void main(void) {
+setup();
+while (1) {
+asm(" clrwdt");
+if(PIR1bits.RCIF){
+unsigned char commandByte = RCREG;
+union inttime newDelay;
+char errorFlag=0;
+switch(commandByte){
+case 0xA0:
+mode=2;
+break;
+case 0xA1:
+mode=0;
+break;
+case 0xA2:
+mode=1;
+break;
+case 0xA3:
+_delay((unsigned long)((1)*(24000000/4000.0)));
+if(PIR1bits.RCIF){
+newDelay.upper=RCREG;
+}
+else{
+errorFlag = 1;
+}
+_delay((unsigned long)((1)*(24000000/4000.0)));
+if(PIR1bits.RCIF){
+newDelay.lower=RCREG;
+}
+else{
+errorFlag = 1;
+}
+if(!errorFlag){
+sampleDelay = newDelay.all;
+}
+else{
+
+}
+break;
+default:
+
+break;
+}
+}
+switch (mode) {
+case 1:
+takeReading();
+sendData();
+mode = 0;
+break;
+case 2:
+delayms(sampleDelay);
+takeReading();
+sendData();
+break;
+}
+}
+return;
+}
+
+void setup(void) {
+ADCON0bits.ADON = 0;
+ADCON1 = 0b00001111;
+T0CONbits.TMR0ON = 1;
+T0CONbits.T08BIT = 0;
+T0CONbits.T0CS = 0;
+T0CONbits.PSA = 0;
+T0CONbits.T0PS = 0b101;
+
+TRISCbits.TRISC0 = 0;
+PORTCbits.RC0 = 1;
+TRISCbits.TRISC1 = 0;
+PORTCbits.RC1 = 0;
+
+TRISCbits.TRISC6 = 1;
+TRISCbits.TRISC7 = 1;
+TXSTAbits.TX9 = 0;
+TXSTAbits.TXEN = 1;
+TXSTAbits.SYNC = 0;
+RCSTAbits.SPEN = 1;
+RCSTAbits.RX9 = 0;
+RCSTAbits.CREN = 1;
+BAUDCONbits.BRG16 = 1;
+TXSTAbits.BRGH = 0;
+SPBRGH = 0;
+SPBRG = 12;
+for (unsigned char i = 0; i < 16; i++) {
+sampleBuffer[i].all = (unsigned int) 0;
+}
+const char readyStr[] = {"Ready!\n"};
+sendSerialStr(readyStr, 7);
+}
+
+void takeReading(void) {
+PORTCbits.RC1 = 1;
+lastSampleTimestamp.lower = TMR0L;
+lastSampleTimestamp.upper = TMR0H;
+PORTCbits.RC0 = 1;
+
+asm("NOP");
+asm("NOP");
+asm("NOP");
+asm("NOP");
+PORTCbits.RC1 = 0;
+
+
+asm("NOP");
+
+
+
+
+sampleBuffer[15].rd = 0xff;
+sampleBuffer[15].rb = 0xff;
+
+
+unsigned char i = 15;
+do {
+i--;
+PORTCbits.RC0 = 0;
+
+asm("NOP");
+
+
+PORTCbits.RC0 = 1;
+sampleBuffer[i].rd = 0xff;
+sampleBuffer[i].rb = 0xff;
+} while (i);
+}
+
+unsigned int sendSerialByte(unsigned char byte) {
+TXREG = byte;
+asm("NOP");
+unsigned int time = 0;
+while (!PIR1bits.TXIF) {
+time++;
+}
+return time;
+}
+
+void sendData() {
+unsigned char checksum=0;
+sendSerialByte(0);
+sendSerialByte(lastSampleTimestamp.upper);
+checksum ^= lastSampleTimestamp.upper;
+sendSerialByte(lastSampleTimestamp.lower);
+checksum ^= lastSampleTimestamp.lower;
+for(unsigned char i=0;i<16;i++){
+sendSerialByte(sampleBuffer[i].rd);
+checksum ^= sampleBuffer[i].rd;
+sendSerialByte(sampleBuffer[i].rb);
+checksum ^= sampleBuffer[i].rb;
+}
+sendSerialByte(checksum);
+}
+
+void delayms(unsigned int ms) {
+ms -= 0;
+unsigned int chunks = ms / 10;
+unsigned char remainder = ms % 10;
+unsigned int i;
+for (i = 0; i < chunks; i++) {
+_delay((unsigned long)((10)*(24000000/4000.0)));
+}
+for(i=0;i<remainder;i++){
+_delay((unsigned long)((1)*(24000000/4000.0)));
+}
+}
+
+void sendSerialStr(const char * str, unsigned char num){
+for(unsigned int i=0; i<num; i++){
+sendSerialByte(str[i]);
+}
+}
