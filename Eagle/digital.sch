@@ -16514,6 +16514,9 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <classes>
 <class number="0" name="default" width="0" drill="0">
 </class>
+<class number="1" name="USB" width="0.3048" drill="0">
+<clearance class="1" value="2.54"/>
+</class>
 </classes>
 <parts>
 <part name="U$1" library="PIC18" deviceset="PIC18F4458" device=""/>
@@ -16956,7 +16959,7 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <wire x1="-27.94" y1="-2.54" x2="15.24" y2="-2.54" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$3" class="0">
+<net name="USB_P" class="1">
 <segment>
 <pinref part="J1" gate="G$1" pin="D+"/>
 <wire x1="68.58" y1="7.62" x2="68.58" y2="22.86" width="0.1524" layer="91"/>
@@ -16964,7 +16967,7 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <wire x1="68.58" y1="22.86" x2="58.42" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$4" class="0">
+<net name="USB_N" class="1">
 <segment>
 <pinref part="U$1" gate="G$1" pin="RC4/D-"/>
 <pinref part="J1" gate="G$1" pin="D-"/>
