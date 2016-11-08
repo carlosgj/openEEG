@@ -5220,7 +5220,7 @@ extern __nonreentrant void _delaywdt(unsigned long);
 extern __nonreentrant void _delay3(unsigned char);
 
 
-# 7 "main.h"
+# 9 "main.h"
 #pragma config PLLDIV = 6
 #pragma config CPUDIV = 0
 #pragma config USBDIV = 1
@@ -5237,7 +5237,11 @@ extern __nonreentrant void _delay3(unsigned char);
 #pragma config VREGEN = ON
 
 
+
+
+
 #pragma config WDT = ON
+
 #pragma config WDTPS = 0b0111
 
 
@@ -5279,7 +5283,7 @@ extern __nonreentrant void _delay3(unsigned char);
 
 #pragma config EBTRB = OFF
 
-# 83
+# 89
 typedef union sampleBufferBit {
 unsigned int all;
 
@@ -5319,15 +5323,8 @@ unsigned char commandByte = RCREG;
 union inttime newDelay;
 char errorFlag=0;
 switch(commandByte){
-case 0xA0:
-mode=2;
-break;
-case 0xA1:
-mode=0;
-break;
-case 0xA2:
-mode=1;
-break;
+
+# 43
 case 0xA3:
 _delay((unsigned long)((1)*(24000000/4000.0)));
 if(PIR1bits.RCIF){
@@ -5355,17 +5352,12 @@ default:
 break;
 }
 }
-switch (mode) {
-case 1:
-takeReading();
-sendData();
-mode = 0;
-break;
-case 2:
+
+# 82
+if(PORTCbits.RC2){
 delayms(sampleDelay);
 takeReading();
 sendData();
-break;
 }
 }
 return;
@@ -5384,6 +5376,7 @@ TRISCbits.TRISC0 = 0;
 PORTCbits.RC0 = 1;
 TRISCbits.TRISC1 = 0;
 PORTCbits.RC1 = 0;
+TRISCbits.RC2 = 1;
 
 TRISCbits.TRISC6 = 1;
 TRISCbits.TRISC7 = 1;
@@ -5419,11 +5412,10 @@ PORTCbits.RC1 = 0;
 
 asm("NOP");
 
+# 145
+sampleBuffer[15].rd = PORTD;
+sampleBuffer[15].rb = PORTB;
 
-
-
-sampleBuffer[15].rd = 0xff;
-sampleBuffer[15].rb = 0xff;
 
 
 unsigned char i = 15;
@@ -5434,9 +5426,13 @@ PORTCbits.RC0 = 0;
 asm("NOP");
 
 
+
+
+sampleBuffer[i].rd = PORTD;
+sampleBuffer[i].rb = PORTB;
+
 PORTCbits.RC0 = 1;
-sampleBuffer[i].rd = 0xff;
-sampleBuffer[i].rb = 0xff;
+
 } while (i);
 }
 
