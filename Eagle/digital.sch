@@ -16554,101 +16554,6 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="switch">
-<description>&lt;b&gt;Switches&lt;/b&gt;&lt;p&gt;
-Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="9070-1W">
-<description>&lt;b&gt;TOGGLE SWITCH&lt;/b&gt;&lt;p&gt;
- Marquardt</description>
-<wire x1="-6.35" y1="-4.445" x2="4.445" y2="-4.445" width="0.1524" layer="21"/>
-<wire x1="4.445" y1="4.445" x2="-6.35" y2="4.445" width="0.1524" layer="21"/>
-<wire x1="-9.144" y1="-2.286" x2="-9.144" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-6.35" y1="4.445" x2="-6.35" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-9.144" y1="1.27" x2="-17.907" y2="-0.889" width="0.1524" layer="21"/>
-<wire x1="-9.144" y1="1.27" x2="-9.144" y2="2.286" width="0.1524" layer="21"/>
-<wire x1="-9.144" y1="-1.27" x2="-17.907" y2="-3.429" width="0.1524" layer="21"/>
-<wire x1="-9.144" y1="-1.27" x2="-9.144" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="-17.907" y1="-3.429" x2="-17.907" y2="-0.889" width="0.1524" layer="21" curve="-180"/>
-<wire x1="-8.89" y1="-2.54" x2="-9.144" y2="-2.286" width="0.1524" layer="21"/>
-<wire x1="-8.89" y1="-2.54" x2="-6.35" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="-6.35" y1="-2.54" x2="-6.35" y2="-4.445" width="0.1524" layer="21"/>
-<wire x1="-9.144" y1="2.286" x2="-8.89" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-8.89" y1="2.54" x2="-6.35" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-6.35" y1="2.54" x2="-6.35" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="-8.89" y1="2.54" x2="-8.89" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="4.445" y1="-4.445" x2="4.445" y2="-3.302" width="0.1524" layer="21"/>
-<wire x1="4.445" y1="-1.778" x2="4.445" y2="-3.302" width="0.1524" layer="51"/>
-<wire x1="4.445" y1="-1.778" x2="4.445" y2="-0.762" width="0.1524" layer="21"/>
-<wire x1="4.445" y1="0.762" x2="4.445" y2="-0.762" width="0.1524" layer="51"/>
-<wire x1="4.445" y1="4.445" x2="4.445" y2="3.302" width="0.1524" layer="21"/>
-<wire x1="4.445" y1="1.778" x2="4.445" y2="3.302" width="0.1524" layer="51"/>
-<wire x1="4.445" y1="1.778" x2="4.445" y2="0.762" width="0.1524" layer="21"/>
-<pad name="1" x="5.08" y="-2.54" drill="0.8128" shape="long"/>
-<pad name="2" x="5.08" y="0" drill="0.8128" shape="long"/>
-<pad name="3" x="5.08" y="2.54" drill="0.8128" shape="long"/>
-<pad name="B" x="0" y="-2.54" drill="1.1176" diameter="1.778"/>
-<pad name="B1" x="0" y="2.54" drill="1.1176" diameter="1.778"/>
-<text x="-5.08" y="5.08" size="1.524" layer="25" ratio="10">&gt;NAME</text>
-<text x="-5.08" y="-0.762" size="1.524" layer="27" ratio="10">&gt;VALUE</text>
-<rectangle x1="4.445" y1="-2.921" x2="5.08" y2="-2.159" layer="51"/>
-<rectangle x1="4.445" y1="-0.381" x2="5.08" y2="0.381" layer="51"/>
-<rectangle x1="4.445" y1="2.159" x2="5.08" y2="2.921" layer="51"/>
-</package>
-</packages>
-<symbols>
-<symbol name="KS-UB">
-<wire x1="-3.81" y1="1.905" x2="-2.54" y2="1.905" width="0.254" layer="94"/>
-<wire x1="-3.81" y1="1.905" x2="-3.81" y2="0" width="0.254" layer="94"/>
-<wire x1="-3.81" y1="0" x2="-1.905" y2="0" width="0.1524" layer="94"/>
-<wire x1="-3.81" y1="0" x2="-3.81" y2="-1.905" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="0" x2="-0.762" y2="0" width="0.1524" layer="94"/>
-<wire x1="-5.08" y1="1.905" x2="-3.81" y2="1.905" width="0.254" layer="94"/>
-<wire x1="0.254" y1="0" x2="0.635" y2="0" width="0.1524" layer="94"/>
-<wire x1="1.27" y1="0" x2="1.905" y2="0" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="-3.175" x2="2.54" y2="-1.905" width="0.254" layer="94"/>
-<wire x1="2.54" y1="-1.905" x2="0.635" y2="3.175" width="0.254" layer="94"/>
-<wire x1="3.81" y1="2.54" x2="5.08" y2="2.54" width="0.254" layer="94"/>
-<wire x1="5.08" y1="2.54" x2="5.08" y2="3.175" width="0.254" layer="94"/>
-<wire x1="0" y1="2.54" x2="1.27" y2="2.54" width="0.254" layer="94"/>
-<wire x1="0" y1="2.54" x2="0" y2="3.175" width="0.254" layer="94"/>
-<wire x1="-0.762" y1="0" x2="-0.254" y2="-0.762" width="0.1524" layer="94"/>
-<wire x1="-0.254" y1="-0.762" x2="0.254" y2="0" width="0.1524" layer="94"/>
-<wire x1="7.62" y1="-3.175" x2="7.62" y2="3.175" width="0.254" layer="94"/>
-<text x="-3.81" y="2.54" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
-<text x="-6.35" y="-1.905" size="1.778" layer="95" rot="R90">&gt;NAME</text>
-<pin name="P" x="2.54" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
-<pin name="S" x="5.08" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
-<pin name="O" x="0" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
-<pin name="B" x="7.62" y="-5.08" visible="pad" length="short" direction="pas" swaplevel="1" rot="R90"/>
-<pin name="B1" x="7.62" y="5.08" visible="pad" length="short" direction="pas" swaplevel="1" rot="R270"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="9070-1W" prefix="S" uservalue="yes">
-<description>&lt;b&gt;TOGGLE SWITCH&lt;/b&gt;&lt;p&gt;
- Marquardt</description>
-<gates>
-<gate name="2" symbol="KS-UB" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="9070-1W">
-<connects>
-<connect gate="2" pin="B" pad="B"/>
-<connect gate="2" pin="B1" pad="B1"/>
-<connect gate="2" pin="O" pad="1"/>
-<connect gate="2" pin="P" pad="2"/>
-<connect gate="2" pin="S" pad="3"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="74xx-eu">
 <description>&lt;b&gt;TTL Devices, 74xx Series with European Symbols&lt;/b&gt;&lt;p&gt;
 Based on the following sources:
@@ -17044,8 +16949,6 @@ Based on the following sources:
 <part name="SUPPLY6" library="supply2" deviceset="DGND" device=""/>
 <part name="SUPPLY7" library="supply2" deviceset="DGND" device=""/>
 <part name="U$5" library="SparkFun-Connectors" deviceset="USB" device="SMD"/>
-<part name="S1" library="switch" deviceset="9070-1W" device=""/>
-<part name="SUPPLY58" library="supply2" deviceset="DGND" device=""/>
 <part name="IC2" library="74xx-eu" deviceset="74*08" device="D" technology="HCT"/>
 <part name="SUPPLY9" library="supply2" deviceset="DGND" device=""/>
 <part name="SUPPLY59" library="supply2" deviceset="+5V/2" device=""/>
@@ -17186,8 +17089,6 @@ Based on the following sources:
 <instance part="SUPPLY6" gate="G$1" x="152.4" y="45.72"/>
 <instance part="SUPPLY7" gate="G$1" x="167.64" y="7.62"/>
 <instance part="U$5" gate="G$1" x="71.12" y="12.7"/>
-<instance part="S1" gate="2" x="358.14" y="-10.16" rot="MR90"/>
-<instance part="SUPPLY58" gate="G$1" x="370.84" y="-7.62"/>
 <instance part="IC2" gate="A" x="121.92" y="27.94" rot="R180"/>
 <instance part="IC2" gate="P" x="213.36" y="53.34"/>
 <instance part="SUPPLY9" gate="G$1" x="213.36" y="43.18"/>
@@ -17504,19 +17405,6 @@ Based on the following sources:
 <pinref part="SUPPLY7" gate="G$1" pin="DGND"/>
 </segment>
 <segment>
-<pinref part="S1" gate="2" pin="S"/>
-<pinref part="S1" gate="2" pin="B1"/>
-<wire x1="370.84" y1="-5.08" x2="363.22" y2="-2.54" width="0.1524" layer="91"/>
-<pinref part="SUPPLY58" gate="G$1" pin="DGND"/>
-<junction x="370.84" y="-5.08"/>
-<wire x1="370.84" y1="-5.08" x2="363.22" y2="-5.08" width="0.1524" layer="91"/>
-<pinref part="S1" gate="2" pin="B"/>
-<wire x1="353.06" y1="-2.54" x2="353.06" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="353.06" y1="2.54" x2="363.22" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="363.22" y1="2.54" x2="363.22" y2="-2.54" width="0.1524" layer="91"/>
-<junction x="363.22" y="-2.54"/>
-</segment>
-<segment>
 <pinref part="IC2" gate="P" pin="GND"/>
 <pinref part="SUPPLY9" gate="G$1" pin="DGND"/>
 </segment>
@@ -17556,9 +17444,10 @@ Based on the following sources:
 <pinref part="SUPPLY3" gate="G$1" pin="+5V/2"/>
 <junction x="304.8" y="-7.62"/>
 <pinref part="R16" gate="G$1" pin="2"/>
-<pinref part="S1" gate="2" pin="P"/>
-<wire x1="347.98" y1="-7.62" x2="353.06" y2="-7.62" width="0.1524" layer="91"/>
 <junction x="347.98" y="-7.62"/>
+<pinref part="CN1" gate="G$1" pin="PWR"/>
+<wire x1="365.76" y1="-7.62" x2="365.76" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="365.76" y1="-7.62" x2="347.98" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="SUPPLY11" gate="G$1" pin="+5V/2"/>
@@ -17975,14 +17864,6 @@ Based on the following sources:
 <pinref part="U$5" gate="G$1" pin="D-"/>
 <pinref part="U$1" gate="G$1" pin="RC4/D-"/>
 <wire x1="68.58" y1="17.78" x2="58.42" y2="17.78" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$44" class="0">
-<segment>
-<pinref part="S1" gate="2" pin="O"/>
-<pinref part="CN1" gate="G$1" pin="PWR"/>
-<wire x1="363.22" y1="-10.16" x2="365.76" y2="-10.16" width="0.1524" layer="91"/>
-<wire x1="365.76" y1="-10.16" x2="365.76" y2="-15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$46" class="0">
