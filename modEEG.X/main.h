@@ -1,6 +1,8 @@
 #ifndef COMMON_H
 #define	COMMON_H
 
+#define DEBUG
+
 #include <xc.h> // include processor files - each processor file is guarded.  
 
 // CONFIG1L
@@ -20,8 +22,12 @@
 #pragma config VREGEN = ON      // USB Voltage Regulator Enable bit (USB voltage regulator enabled)
 
 // CONFIG2H
+#ifdef DEBUG
+#pragma config WDT = OFF
+#else
 #pragma config WDT = ON         // Watchdog Timer Enable bit (WDT enabled)
-#pragma config WDTPS = 0b0111   // Watchdog Timer Postscale Select bits (~0.5s)
+#endif
+#pragma config WDTPS = 0b1111   // Watchdog Timer Postscale Select bits (~0.5s)
 
 // CONFIG3H
 #pragma config CCP2MX = ON      // CCP2 MUX bit (CCP2 input/output is multiplexed with RC1)
@@ -72,12 +78,12 @@
 #define DELAY_FINAGLE 0
 
 #define MODE_STANDBY 0
-#define MODE_ONESHOT 1
+//#define MODE_ONESHOT 1
 #define MODE_CONTINUOUS 2
 
-#define START_ACQ_COMMAND 0xA0
-#define STOP_ACQ_COMMAND 0xA1
-#define ONESHOT_COMMAND 0xA2
+//#define START_ACQ_COMMAND 0xA0
+//#define STOP_ACQ_COMMAND 0xA1
+//#define ONESHOT_COMMAND 0xA2
 #define SET_DELAY_COMMAND 0xA3
 
 typedef union sampleBufferBit {

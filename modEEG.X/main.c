@@ -31,15 +31,15 @@ void main(void) {
             union inttime newDelay;
             char errorFlag=FALSE;
             switch(commandByte){
-                case START_ACQ_COMMAND:
-                    mode=MODE_CONTINUOUS;
-                    break;
-                case STOP_ACQ_COMMAND:
-                    mode=MODE_STANDBY;
-                    break;
-                case ONESHOT_COMMAND:
-                    mode=MODE_ONESHOT;
-                    break;
+//                case START_ACQ_COMMAND:
+//                    mode=MODE_CONTINUOUS;
+//                    break;
+//                case STOP_ACQ_COMMAND:
+//                    mode=MODE_STANDBY;
+//                    break;
+//                case ONESHOT_COMMAND:
+//                    mode=MODE_ONESHOT;
+//                    break;
                 case SET_DELAY_COMMAND:
                     __delay_ms(1);//Should be enough time to receive the next byte
                     if(PIR1bits.RCIF){
@@ -67,17 +67,22 @@ void main(void) {
                     break;
             }
         }
-        switch (mode) {
-            case MODE_ONESHOT:
-                takeReading();
-                sendData();
-                mode = MODE_STANDBY;
-                break;
-            case MODE_CONTINUOUS:
-                delayms(sampleDelay);
-                takeReading();
-                sendData();
-                break;
+//        switch (mode) {
+//            case MODE_ONESHOT:
+//                takeReading();
+//                sendData();
+//                mode = MODE_STANDBY;
+//                break;
+//            case MODE_CONTINUOUS:
+//                delayms(sampleDelay);
+//                takeReading();
+//                sendData();
+//                break;
+//        }
+        if(PORT_PIN_RTS){
+            delayms(sampleDelay);
+            takeReading();
+            sendData();
         }
     }
     return;
@@ -96,6 +101,7 @@ void setup(void) {
     PORT_PIN_SCK = TRUE; //SCK idles high
     TRIS_PIN_CNV = OUTPUT;
     PORT_PIN_CNV = FALSE; //CNV idles low
+    TRIS_PIN_RTS = INPUT;
 
     TRISCbits.TRISC6 = TRUE; //Per page 243
     TRISCbits.TRISC7 = TRUE; //Per page 243
@@ -132,10 +138,13 @@ void takeReading(void) {
     asm("NOP"); //1 IC is ~ 166 ns ((1/24 MHz)*4) so this is more than necessary.
 
     //Get first bit (MSB)
-    //    sampleBuffer[15].rd = PORTD;
-    //    sampleBuffer[15].rb = PORTB;
+#ifdef DEBUG
     sampleBuffer[15].rd = 0xff;
     sampleBuffer[15].rb = 0xff;
+#else
+    sampleBuffer[15].rd = PORTD;
+    sampleBuffer[15].rb = PORTB;
+#endif
 
     //get remaining bits
     unsigned char i = 15;
@@ -144,11 +153,15 @@ void takeReading(void) {
         PORT_PIN_SCK = FALSE; //Falling edge
         //TODO: wait at least 9.5 ns for data to become valid (AD7902 p. 5 - tDSDO)
         asm("NOP"); //1 IC is ~ 166 ns ((1/24 MHz)*4) so this is more than necessary.
-        //        sampleBuffer[i].rd = PORTD;
-        //        sampleBuffer[i].rb = PORTB;
-        PORT_PIN_SCK = TRUE; //Reset
+#ifdef DEBUG
         sampleBuffer[i].rd = 0xff;
         sampleBuffer[i].rb = 0xff;
+#else
+        sampleBuffer[i].rd = PORTD;
+        sampleBuffer[i].rb = PORTB;
+#endif
+        PORT_PIN_SCK = TRUE; //Reset
+        
     } while (i);
 }
 
