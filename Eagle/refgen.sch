@@ -9621,78 +9621,6 @@ Source: ERNI-D-Sub-Conmnectors-d.pdf / www.erni.com</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="SparkFun-Connectors">
-<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
-In this library you'll find connectors and sockets- basically anything that can be plugged into or onto.&lt;br&gt;&lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
-&lt;br&gt;&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
-&lt;br&gt;&lt;br&gt;
-You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
-<packages>
-<package name="BNC">
-<description>Fits Mouser Part#5227161</description>
-<wire x1="-7.493" y1="-2.9718" x2="7.493" y2="-2.9718" width="0.127" layer="21"/>
-<wire x1="7.493" y1="-2.9718" x2="7.493" y2="10.8712" width="0.127" layer="21"/>
-<wire x1="7.493" y1="10.8712" x2="-7.493" y2="10.8712" width="0.127" layer="21"/>
-<wire x1="-7.493" y1="10.8712" x2="-7.493" y2="-2.9718" width="0.127" layer="21"/>
-<wire x1="-7.112" y1="10.8712" x2="-7.112" y2="19.8882" width="0.127" layer="51"/>
-<wire x1="-7.112" y1="19.8882" x2="-6.604" y2="19.8882" width="0.127" layer="51"/>
-<wire x1="-6.604" y1="19.8882" x2="6.604" y2="19.8882" width="0.127" layer="51"/>
-<wire x1="6.604" y1="19.8882" x2="7.0866" y2="19.8882" width="0.127" layer="51"/>
-<wire x1="7.0866" y1="19.8882" x2="7.112" y2="19.8882" width="0.127" layer="51"/>
-<wire x1="7.112" y1="19.8882" x2="7.112" y2="10.8712" width="0.127" layer="51"/>
-<wire x1="6.604" y1="19.8882" x2="6.604" y2="33.7312" width="0.127" layer="51"/>
-<wire x1="6.604" y1="33.7312" x2="-6.604" y2="33.7312" width="0.127" layer="51"/>
-<wire x1="-6.604" y1="33.7312" x2="-6.604" y2="19.8882" width="0.127" layer="51"/>
-<wire x1="-7.0866" y1="17.7546" x2="7.0866" y2="18.6182" width="0.127" layer="51"/>
-<wire x1="-7.0866" y1="16.4846" x2="7.0866" y2="17.3482" width="0.127" layer="51"/>
-<wire x1="-7.0866" y1="15.2146" x2="7.0866" y2="16.0782" width="0.127" layer="51"/>
-<wire x1="-7.0866" y1="13.9446" x2="7.0866" y2="14.8082" width="0.127" layer="51"/>
-<wire x1="-7.0866" y1="12.6746" x2="7.0866" y2="13.5382" width="0.127" layer="51"/>
-<wire x1="-7.0866" y1="11.4046" x2="7.0866" y2="12.2682" width="0.127" layer="51"/>
-<wire x1="-7.0866" y1="19.0246" x2="7.0866" y2="19.8882" width="0.127" layer="51"/>
-<circle x="0" y="30.48" radius="0.8179" width="0.127" layer="51"/>
-<pad name="GND" x="-2.54" y="0" drill="0.8" shape="long" rot="R90"/>
-<pad name="S" x="0" y="0" drill="0.8" shape="long" rot="R90"/>
-<pad name="3" x="-5.08" y="5.08" drill="2.2"/>
-<pad name="4" x="5.08" y="5.08" drill="2.2"/>
-<text x="-6.35" y="8.89" size="0.4064" layer="25">&gt;NAME</text>
-<text x="-6.35" y="7.62" size="0.4064" layer="27" rot="SR0">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="BNC">
-<circle x="0" y="0" radius="2.54" width="0.254" layer="94"/>
-<circle x="0" y="0" radius="0.5679" width="0.254" layer="94"/>
-<text x="-2.54" y="5.08" size="1.778" layer="95">&gt;NAME</text>
-<text x="-2.54" y="2.54" size="1.778" layer="96">&gt;VALUE</text>
-<text x="0" y="-2.54" size="1.778" layer="94" rot="MR180">GND</text>
-<text x="2.54" y="0" size="1.778" layer="94">OUT</text>
-<pin name="OUT" x="5.08" y="0" visible="off" length="middle" rot="R180"/>
-<pin name="GND" x="0" y="-5.08" visible="off" length="short" rot="R90"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="BNC">
-<description>BNC Connector, Mouser Part# 5227161</description>
-<gates>
-<gate name="G$1" symbol="BNC" x="0" y="0"/>
-</gates>
-<devices>
-<device name="PTH" package="BNC">
-<connects>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="OUT" pad="S"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="modEEG">
 <packages>
 <package name="DIN42802">
@@ -9750,7 +9678,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="IC2" library="EEG" deviceset="MAX6341" device="N"/>
 <part name="SUPPLY1" library="supply2" deviceset="+5V" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
-<part name="C1" library="resistor" deviceset="C-EU" device="050-025X075" value="0.01uf"/>
+<part name="C1" library="resistor" deviceset="C-EU" device="050-025X075" value="2.2uF"/>
 <part name="R1" library="resistor" deviceset="R-US_" device="0204/2V"/>
 <part name="R2" library="resistor" deviceset="R-TRIMM" device="3296W"/>
 <part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
@@ -9775,11 +9703,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="X1" library="con-subd" deviceset="M25?S" device="HP"/>
 <part name="SUPPLY11" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY12" library="supply2" deviceset="+5V" device=""/>
-<part name="MON_VREF" library="SparkFun-Connectors" deviceset="BNC" device="PTH"/>
-<part name="MON_RLD" library="SparkFun-Connectors" deviceset="BNC" device="PTH"/>
 <part name="RLD_COM" library="testpad" deviceset="TP" device="PAD1-17"/>
-<part name="C9" library="resistor" deviceset="C-EU" device="050-025X075" value="0.01uf"/>
+<part name="C9" library="resistor" deviceset="C-EU" device="050-025X075" value="2.2uF"/>
 <part name="RLD_OUT" library="modEEG" deviceset="DIN42802" device=""/>
+<part name="MON_RLD" library="testpad" deviceset="TP" device="PAD1-17"/>
+<part name="MON_VREF" library="testpad" deviceset="TP" device="PAD1-17"/>
 </parts>
 <sheets>
 <sheet>
@@ -9827,11 +9755,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="X1" gate="-18" x="114.3" y="5.08"/>
 <instance part="SUPPLY11" gate="GND" x="99.06" y="12.7"/>
 <instance part="SUPPLY12" gate="+5V" x="111.76" y="27.94"/>
-<instance part="MON_VREF" gate="G$1" x="12.7" y="86.36"/>
-<instance part="MON_RLD" gate="G$1" x="71.12" y="-20.32"/>
 <instance part="RLD_COM" gate="G$1" x="30.48" y="-5.08"/>
 <instance part="C9" gate="G$1" x="-30.48" y="63.5"/>
 <instance part="RLD_OUT" gate="G$1" x="76.2" y="-10.16" rot="R90"/>
+<instance part="MON_RLD" gate="G$1" x="78.74" y="-20.32" rot="R270"/>
+<instance part="MON_VREF" gate="G$1" x="20.32" y="76.2"/>
 </instances>
 <busses>
 </busses>
@@ -9934,9 +9862,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="X1" gate="-3" pin="M"/>
 <wire x1="27.94" y1="66.04" x2="30.48" y2="66.04" width="0.1524" layer="91"/>
 <junction x="27.94" y="66.04"/>
-<pinref part="MON_VREF" gate="G$1" pin="OUT"/>
-<wire x1="17.78" y1="86.36" x2="20.32" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="86.36" x2="20.32" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="73.66" x2="20.32" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="MON_VREF" gate="G$1" pin="TP"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -10002,17 +9929,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="129.54" y="66.04"/>
 <label x="149.86" y="66.04" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="MON_VREF" gate="G$1" pin="GND"/>
-<wire x1="12.7" y1="81.28" x2="12.7" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="76.2" x2="10.16" y2="76.2" width="0.1524" layer="91"/>
-<label x="2.54" y="76.2" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="MON_RLD" gate="G$1" pin="GND"/>
-<wire x1="71.12" y1="-25.4" x2="71.12" y2="-33.02" width="0.1524" layer="91"/>
-<label x="68.58" y="-35.56" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="RLD_COM" class="0">
 <segment>
@@ -10050,10 +9966,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="63.5" y1="-10.16" x2="63.5" y2="0" width="0.1524" layer="91"/>
 <junction x="63.5" y="-10.16"/>
 <wire x1="63.5" y1="-10.16" x2="76.2" y2="-10.16" width="0.1524" layer="91"/>
-<pinref part="MON_RLD" gate="G$1" pin="OUT"/>
 <wire x1="76.2" y1="-20.32" x2="76.2" y2="-10.16" width="0.1524" layer="91"/>
 <pinref part="RLD_OUT" gate="G$1" pin="P$1"/>
 <junction x="76.2" y="-10.16"/>
+<pinref part="MON_RLD" gate="G$1" pin="TP"/>
 </segment>
 </net>
 <net name="N$6" class="0">
