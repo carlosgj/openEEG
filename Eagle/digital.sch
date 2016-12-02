@@ -16629,6 +16629,9 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <part name="SUPPLY9" library="supply2" deviceset="DGND" device=""/>
 <part name="X2" library="con-subd" deviceset="F09" device="HP"/>
 <part name="SUPPLY60" library="supply2" deviceset="DGND" device=""/>
+<part name="R17" library="resistor" deviceset="R-US_" device="0204/2V" value="100k"/>
+<part name="R18" library="resistor" deviceset="R-US_" device="0204/2V" value="100k"/>
+<part name="SUPPLY4" library="supply2" deviceset="DGND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -16773,6 +16776,9 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <instance part="SUPPLY9" gate="G$1" x="43.18" y="132.08"/>
 <instance part="X2" gate="G$1" x="233.68" y="17.78"/>
 <instance part="SUPPLY60" gate="G$1" x="226.06" y="10.16"/>
+<instance part="R17" gate="G$1" x="-7.62" y="68.58" rot="R90"/>
+<instance part="R18" gate="G$1" x="-7.62" y="58.42" rot="R90"/>
+<instance part="SUPPLY4" gate="G$1" x="-7.62" y="50.8"/>
 </instances>
 <busses>
 </busses>
@@ -17132,6 +17138,10 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <segment>
 <pinref part="X2" gate="G$1" pin="5"/>
 <pinref part="SUPPLY60" gate="G$1" pin="DGND"/>
+</segment>
+<segment>
+<pinref part="R18" gate="G$1" pin="1"/>
+<pinref part="SUPPLY4" gate="G$1" pin="DGND"/>
 </segment>
 </net>
 <net name="N$26" class="0">
@@ -17620,6 +17630,27 @@ Source: 153385-da-01-en-Optocoupler_ILD205-T.pdf</description>
 <pinref part="U$1" gate="G$1" pin="RC2"/>
 <wire x1="154.94" y1="12.7" x2="58.42" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="12.7" x2="58.42" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$42" class="0">
+<segment>
+<pinref part="J1" gate="G$1" pin="VBUS"/>
+<wire x1="68.58" y1="2.54" x2="63.5" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="2.54" x2="63.5" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="-20.32" x2="-17.78" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="-20.32" x2="-17.78" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="R17" gate="G$1" pin="1"/>
+<pinref part="R18" gate="G$1" pin="2"/>
+<wire x1="-17.78" y1="63.5" x2="-7.62" y2="63.5" width="0.1524" layer="91"/>
+<junction x="-7.62" y="63.5"/>
+</segment>
+</net>
+<net name="N$55" class="0">
+<segment>
+<pinref part="R17" gate="G$1" pin="2"/>
+<pinref part="U$1" gate="G$1" pin="RA0"/>
+<wire x1="-7.62" y1="73.66" x2="15.24" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="73.66" x2="15.24" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
