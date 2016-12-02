@@ -1,5 +1,5 @@
-#ifndef COMMON_H
-#define	COMMON_H
+#ifndef MAIN_H
+#define	MAIN_H
 
 #define DEBUG
 
@@ -68,13 +68,6 @@
 // CONFIG7H
 #pragma config EBTRB = OFF      // Boot Block Table Read Protection bit (Boot block (000000-0007FFh) is not protected from table reads executed in other blocks)
 
-#define TRUE 1
-#define FALSE 0
-
-#define INPUT 1
-#define OUTPUT 0
-
-#define _XTAL_FREQ 24000000
 #define DELAY_FINAGLE 0
 
 #define MODE_STANDBY 0
@@ -103,5 +96,5 @@ typedef union inttime{
     };
 };
 
-#endif	/* XC_HEADER_TEMPLATE_H */
+#endif
 

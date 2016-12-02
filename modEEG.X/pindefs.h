@@ -12,5 +12,8 @@
 #define PORT_PIN_RTS PORTCbits.RC2
 #define TRIS_PIN_RTS TRISCbits.RC2
 
+#define PORT_PIN_USB_DETECT PORTAbits.RA0
+#define TRIS_PIN_USB_DETECT TRISAbits.RA0
+
 #endif	/* XC_HEADER_TEMPLATE_H */
 

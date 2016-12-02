@@ -5,8 +5,8 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.38\dat\en_msgs.txt -cs \
   -h+dist/default/debug\modEEG.X.debug.sym \
   --cmf=dist/default/debug\modEEG.X.debug.cmf -z -Q18F4458 \
-  -oC:\Users\carlosj\AppData\Local\Temp\s6emc.2 \
-  -Mdist/default/debug/modEEG.X.debug.map -E1 -ver=XC8 -ASTACK=060h-07ffh \
+  -oC:\Users\carlosj\AppData\Local\Temp\s3elg.2 \
+  -Mdist/default/debug/modEEG.X.debug.map -E1 -ver=XC8 -ASTACK=041Ch-07ffh \
   -pstack=STACK -ACODE=00h-05FFFh -ACONST=00h-05FFFh \
   -ASMALLCONST=0800h-08FFhx88 -AMEDIUMCONST=0800h-05FFFh -ACOMRAM=01h-05Fh \
   -AABS1=00h-07FFh -ABIGRAM=01h-07FFh -ARAM=060h-0FFh,0100h-01FFhx7 \
@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\carlosj\AppData\Local\Temp\s6emc.obj \
+  C:\Users\carlosj\AppData\Local\Temp\s3elg.obj \
   dist/default/debug\modEEG.X.debug.obj 
 
 Object code version is 3.11
@@ -35,43 +35,45 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\carlosj\AppData\Local\Temp\s6emc.obj
+C:\Users\carlosj\AppData\Local\Temp\s3elg.obj
                 end_init                              0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/debug\modEEG.X.debug.obj
                 smallconst                          800      800        A      400       0
-                text8                               A9E      A9E       52      405       0
-                text7                               AF0      AF0       42      405       0
-                text6                               932      932       8E      405       0
-                text5                               B94      B94       1C      405       0
-                text4                               80A      80A       9A      405       0
-                text3                               B32      B32       34      405       0
-                text2                               8A4      8A4       8E      405       0
-                text1                               A3E      A3E       60      405       0
-                text0                               9C0      9C0       7E      405       0
+                text9                               AA2      AA2       52      405       0
+                text8                               AF4      AF4       42      405       0
+                text7                               936      936       8E      405       0
+                text6                               BC4      BC4       1C      405       0
+                text5                               80A      80A       9A      405       0
+                text4                               B36      B36       34      405       0
+                text3                               B98      B98       2C      405       0
+                text2                               8A4      8A4       92      405       0
+                text1                               A42      A42       60      405       0
+                text0                               9C4      9C4       7E      405       0
                 cstackCOMRAM                         24       24       18        1       1
                 dataCOMRAM                           3C       3C        2        1       1
                 bssCOMRAM                             1        1       23        1       1
-                cinit                               B66      B66       2E      405       0
-                idataCOMRAM                         BB0      BB0        2      405       0
+                cinit                               B6A      B6A       2E      405       0
+                idataCOMRAM                         BE0      BE0        2      405       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              0        0        4         0
-                text8                               A9E      A9E       52         0
-                text7                               AF0      AF0       42         0
-                text6                               932      932       8E         0
-                text5                               B94      B94       1C         0
-                text4                               80A      80A       9A         0
-                text3                               B32      B32       34         0
-                text2                               8A4      8A4       8E         0
-                text1                               A3E      A3E       60         0
-                text0                               9C0      9C0       7E         0
-                cinit                               B66      B66       2E         0
-                idataCOMRAM                         BB0      BB0        2         0
+                text9                               AA2      AA2       52         0
+                text8                               AF4      AF4       42         0
+                text7                               936      936       8E         0
+                text6                               BC4      BC4       1C         0
+                text5                               80A      80A       9A         0
+                text4                               B36      B36       34         0
+                text3                               B98      B98       2C         0
+                text2                               8A4      8A4       92         0
+                text1                               A42      A42       60         0
+                text0                               9C4      9C4       7E         0
+                cinit                               B6A      B6A       2E         0
+                idataCOMRAM                         BE0      BE0        2         0
 
         CLASS   CONST          
 
@@ -86,6 +88,11 @@ TOTAL           Name                               Link     Load   Length     Sp
                 bssCOMRAM                             1        1       23         1
 
         CLASS   ABS1           
+                abs_s1                              400      400       10         1
+                abs_s1                              401      401       13         1
+                abs_s1                              405      405       13         1
+                abs_s1                              409      409       13         1
+                abs_s1                              40D      40D        3         1
 
         CLASS   BIGRAM         
 
@@ -126,7 +133,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 bssCOMRAM                      000001  00003D  00003E         1       1  COMRAM  
                 smallconst                     000800  00000A  00080A       400       0  SMALLCON
-                text4                          00080A  0003A8  000BB2       405       0  CODE    
+                text5                          00080A  0003D8  000BE2       405       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -138,22 +145,24 @@ UNUSED ADDRESS RANGES
         BANK1            000100-0001FF              100
         BANK2            000200-0002FF              100
         BANK3            000300-0003FF              100
-        BANK4            000400-0004FF              100
+        BANK4            00041C-0004FF               E4
         BANK5            000500-0005FF              100
         BANK6            000600-0006FF              100
         BANK7            000700-0007FF              100
-        BIGRAM           00003E-0007FF              7C2
+        BIGRAM           00003E-0003FF              3C2
+                         00041C-0007FF              3E4
         CODE             000004-0007FF              7FC
-                         000BB2-005FFF             544E
+                         000BE2-005FFF             541E
         COMRAM           00003E-00005F               22
         CONST            000004-0007FF              7FC
-                         000BB2-005FFF             544E
+                         000BE2-005FFF             541E
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      000BB2-005FFF             544E
-        RAM              000060-0007FF              100
+        MEDIUMCONST      000BE2-005FFF             541E
+        RAM              000060-0003FF              100
+                         00041C-0007FF              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       000BB2-005FFF              100
-        STACK            000060-0007FF              7A0
+        SMALLCONST       000BE2-005FFF              100
+        STACK            00041C-0007FF              3E4
 
                                   Symbol Table
 
@@ -162,6 +171,22 @@ UNUSED ADDRESS RANGES
 _ADCON0bits              (abs)        000FC2
 _ADCON1                  (abs)        000FC1
 _BAUDCONbits             (abs)        000FB8
+_BD0ADRH                 (abs)        000403
+_BD0ADRL                 (abs)        000402
+_BD0CNT                  (abs)        000401
+_BD0STAT                 (abs)        000400
+_BD1ADRH                 (abs)        000407
+_BD1ADRL                 (abs)        000406
+_BD1CNT                  (abs)        000405
+_BD1STAT                 (abs)        000404
+_BD2ADRH                 (abs)        00040B
+_BD2ADRL                 (abs)        00040A
+_BD2CNT                  (abs)        000409
+_BD2STAT                 (abs)        000408
+_BD3ADRH                 (abs)        00040F
+_BD3ADRL                 (abs)        00040E
+_BD3CNT                  (abs)        00040D
+_BD3STAT                 (abs)        00040C
 _PIR1bits                (abs)        000F9E
 _PORTCbits               (abs)        000F82
 _RCREG                   (abs)        000FAE
@@ -174,6 +199,8 @@ _TMR0L                   (abs)        000FD6
 _TRISCbits               (abs)        000F94
 _TXREG                   (abs)        000FAD
 _TXSTAbits               (abs)        000FAC
+_UCFGbits                (abs)        000F6F
+_UEP0bits                (abs)        000F70
 __CFG_BOR$ON             (abs)        000000
 __CFG_BORV$0             (abs)        000000
 __CFG_CCP2MX$ON          (abs)        000000
@@ -280,6 +307,7 @@ __Htext5                 text5        000000
 __Htext6                 text6        000000
 __Htext7                 text7        000000
 __Htext8                 text8        000000
+__Htext9                 text9        000000
 __LRAM                   (abs)        000001
 __Labs1                  abs1         000000
 __Lbank0                 bank0        000000
@@ -351,17 +379,18 @@ __Ltext5                 text5        000000
 __Ltext6                 text6        000000
 __Ltext7                 text7        000000
 __Ltext8                 text8        000000
+__Ltext9                 text9        000000
 __S0                     (abs)        30000E
 __S1                     (abs)        00003E
 __S2                     (abs)        000000
 ___inthi_sp              stack        000000
 ___intlo_sp              stack        000000
-___lwdiv                 text8        000A9E
+___lwdiv                 text9        000AA2
 ___lwdiv@counter         cstackCOMRAM 00002A
 ___lwdiv@dividend        cstackCOMRAM 000024
 ___lwdiv@divisor         cstackCOMRAM 000026
 ___lwdiv@quotient        cstackCOMRAM 000028
-___lwmod                 text7        000AF0
+___lwmod                 text8        000AF4
 ___lwmod@counter         cstackCOMRAM 000028
 ___lwmod@dividend        cstackCOMRAM 000024
 ___lwmod@divisor         cstackCOMRAM 000026
@@ -370,34 +399,36 @@ ___rparam_used           (abs)        000001
 ___sp                    stack        000000
 __accesstop              (abs)        000060
 __activetblptr           (abs)        000002
-__end_of___lwdiv         text8        000AF0
-__end_of___lwmod         text7        000B32
-__end_of__initialization cinit        000B8A
-__end_of_delayms         text6        0009C0
-__end_of_main            text0        000A3E
-__end_of_sendData        text4        0008A4
-__end_of_sendSerialByte  text5        000BB0
-__end_of_sendSerialStr   text3        000B66
-__end_of_setup           text2        000932
-__end_of_takeReading     text1        000A9E
-__end_ofsetup@F4306      smallconst   000809
-__initialization         cinit        000B66
+__end_of___lwdiv         text9        000AF4
+__end_of___lwmod         text8        000B36
+__end_of__initialization cinit        000B8E
+__end_of_delayms         text7        0009C4
+__end_of_main            text0        000A42
+__end_of_sendData        text5        0008A4
+__end_of_sendSerialByte  text6        000BE0
+__end_of_sendSerialStr   text4        000B6A
+__end_of_setup           text2        000936
+__end_of_setupUSB        text3        000BC4
+__end_of_takeReading     text1        000AA2
+__end_ofsetup@F4336      smallconst   000809
+__initialization         cinit        000B6A
 __mediumconst            mediumconst  000000
 __pbssCOMRAM             bssCOMRAM    000001
-__pcinit                 cinit        000B66
+__pcinit                 cinit        000B6A
 __pcstackCOMRAM          cstackCOMRAM 000024
 __pdataCOMRAM            dataCOMRAM   00003C
-__pidataCOMRAM           idataCOMRAM  000BB0
+__pidataCOMRAM           idataCOMRAM  000BE0
 __psmallconst            smallconst   000800
-__ptext0                 text0        0009C0
-__ptext1                 text1        000A3E
+__ptext0                 text0        0009C4
+__ptext1                 text1        000A42
 __ptext2                 text2        0008A4
-__ptext3                 text3        000B32
-__ptext4                 text4        00080A
-__ptext5                 text5        000B94
-__ptext6                 text6        000932
-__ptext7                 text7        000AF0
-__ptext8                 text8        000A9E
+__ptext3                 text3        000B98
+__ptext4                 text4        000B36
+__ptext5                 text5        00080A
+__ptext6                 text6        000BC4
+__ptext7                 text7        000936
+__ptext8                 text8        000AF4
+__ptext9                 text9        000AA2
 __ramtop                 ramtop       000800
 __size_of___lwdiv        (abs)        000000
 __size_of___lwmod        (abs)        000000
@@ -407,24 +438,26 @@ __size_of_sendData       (abs)        000000
 __size_of_sendSerialByte (abs)        000000
 __size_of_sendSerialStr  (abs)        000000
 __size_of_setup          (abs)        000000
+__size_of_setupUSB       (abs)        000000
 __size_of_takeReading    (abs)        000000
 __smallconst             smallconst   000800
-_delayms                 text6        000932
+_delayms                 text7        000936
 _lastSampleTimestamp     bssCOMRAM    000021
-_main                    text0        0009C0
+_main                    text0        0009C4
 _mode                    bssCOMRAM    000023
 _sampleBuffer            bssCOMRAM    000001
 _sampleDelay             dataCOMRAM   00003C
-_sendData                text4        00080A
-_sendSerialByte          text5        000B94
-_sendSerialStr           text3        000B32
+_sendData                text5        00080A
+_sendSerialByte          text6        000BC4
+_sendSerialStr           text4        000B36
 _setup                   text2        0008A4
-_takeReading             text1        000A3E
+_setupUSB                text3        000B98
+_takeReading             text1        000A42
 delayms@chunks           cstackCOMRAM 00002F
 delayms@i                cstackCOMRAM 000032
 delayms@ms               cstackCOMRAM 00002B
 delayms@remainder        cstackCOMRAM 000031
-end_of_initialization    cinit        000B8A
+end_of_initialization    cinit        000B8E
 intlevel0                text         000000
 intlevel1                text         000000
 intlevel2                text         000000
@@ -439,13 +472,13 @@ sendSerialByte@time      cstackCOMRAM 000024
 sendSerialStr@i          cstackCOMRAM 00002C
 sendSerialStr@num        cstackCOMRAM 000029
 sendSerialStr@str        cstackCOMRAM 000027
-setup@F4306              smallconst   000801
+setup@F4336              smallconst   000801
 setup@i                  cstackCOMRAM 000036
 setup@readyStr           cstackCOMRAM 00002E
 stackhi                  (abs)        0007FF
-stacklo                  (abs)        000060
+stacklo                  (abs)        00041C
 start                    init         000000
-start_initialization     cinit        000B66
+start_initialization     cinit        000B6A
 takeReading@i            cstackCOMRAM 000024
 
 
@@ -453,7 +486,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 25 in file "main.c"
+		line 27 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -487,7 +520,7 @@ Total ram usage:        5 bytes
 
  *************** function _takeReading *****************
  Defined at:
-		line 125 in file "main.c"
+		line 129 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -516,7 +549,7 @@ Total ram usage:        1 bytes
 
  *************** function _setup *****************
  Defined at:
-		line 91 in file "main.c"
+		line 93 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -540,14 +573,44 @@ Total ram usage:        9 bytes
  Hardware stack levels required when called:    2
  This function calls:
 		_sendSerialStr
+		_setupUSB
  This function is called by:
 		_main
  This function uses a non-reentrant model
 
 
+ *************** function _setupUSB *****************
+ Defined at:
+		line 10 in file "usb.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+      Params:         0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_setup
+ This function uses a non-reentrant model
+
+
  *************** function _sendSerialStr *****************
  Defined at:
-		line 207 in file "main.c"
+		line 211 in file "main.c"
  Parameters:    Size  Location     Type
   str             2    3[COMRAM] PTR const unsigned char 
 		 -> setup@readyStr(8), 
@@ -579,7 +642,7 @@ Total ram usage:        7 bytes
 
  *************** function _sendData *****************
  Defined at:
-		line 178 in file "main.c"
+		line 182 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -610,14 +673,14 @@ Total ram usage:        2 bytes
 
  *************** function _sendSerialByte *****************
  Defined at:
-		line 168 in file "main.c"
+		line 172 in file "main.c"
  Parameters:    Size  Location     Type
   byte            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
   byte            1    2[COMRAM] unsigned char 
   time            2    0[COMRAM] unsigned int 
  Return value:  Size  Location     Type
-                  2   82[None  ] unsigned int 
+                  2  116[None  ] unsigned int 
  Registers used:
 		wreg, status,2, status,0
  Tracked objects:
@@ -641,7 +704,7 @@ Total ram usage:        3 bytes
 
  *************** function _delayms *****************
  Defined at:
-		line 194 in file "main.c"
+		line 198 in file "main.c"
  Parameters:    Size  Location     Type
   ms              2    7[COMRAM] unsigned int 
  Auto vars:     Size  Location     Type
@@ -738,29 +801,34 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
-		___lwmod       		CODE           	0AF0	0000	67
+		___lwmod       		CODE           	0AF4	0000	67
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c estimated size: 67
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
-		___lwdiv       		CODE           	0A9E	0000	83
+		___lwdiv       		CODE           	0AA2	0000	83
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c estimated size: 83
 
 shared
-		setup@F4306    		SMALLCONST     	0801	0000	9
-		__initialization		CODE           	0B66	0000	37
+		setup@F4336    		SMALLCONST     	0801	0000	9
+		__initialization		CODE           	0B6A	0000	37
 
 shared estimated size: 46
 
-main.c
-		_main          		CODE           	09C0	0000	127
-		_takeReading   		CODE           	0A3E	0000	97
-		_sendSerialStr 		CODE           	0B32	0000	53
-		_sendSerialByte		CODE           	0B94	0000	29
-		_sendData      		CODE           	080A	0000	155
-		_delayms       		CODE           	0932	0000	143
-		_setup         		CODE           	08A4	0000	143
+usb.c
+		_setupUSB      		CODE           	0B98	0000	45
 
-main.c estimated size: 747
+usb.c estimated size: 45
+
+main.c
+		_main          		CODE           	09C4	0000	127
+		_takeReading   		CODE           	0A42	0000	97
+		_sendSerialStr 		CODE           	0B36	0000	53
+		_sendSerialByte		CODE           	0BC4	0000	29
+		_sendData      		CODE           	080A	0000	155
+		_delayms       		CODE           	0936	0000	143
+		_setup         		CODE           	08A4	0000	147
+
+main.c estimated size: 751
 

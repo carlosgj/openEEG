@@ -7,8 +7,10 @@
 
 
 #include <xc.h>
+#include "common.h"
 #include "main.h"
 #include "pindefs.h"
+#include "usb.h"
 
 void setup(void);
 void takeReading(void);
@@ -120,6 +122,8 @@ void setup(void) {
     }
     const char readyStr[] = {"Ready!\n"};
     sendSerialStr(readyStr, 7);
+    
+    setupUSB();
 }
 
 void takeReading(void) {

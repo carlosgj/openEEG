@@ -6,6 +6,8 @@
                    projectFiles="true">
       <itemPath>pindefs.h</itemPath>
       <itemPath>main.h</itemPath>
+      <itemPath>common.h</itemPath>
+      <itemPath>usb.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -15,6 +17,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>main.c</itemPath>
+      <itemPath>usb.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -25,6 +28,7 @@
   <sourceRootList>
     <Elem>../Microchip Solutions v2011-07-14/Microchip/Include</Elem>
     <Elem>.</Elem>
+    <Elem>../PICKit2GenISOC</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -68,7 +72,7 @@
         <property key="define-macros" value=""/>
         <property key="disable-optimizations" value="false"/>
         <property key="extra-include-directories"
-                  value="..\Microchip Solutions v2011-07-14\Microchip\Include"/>
+                  value="..\Microchip Solutions v2011-07-14\Microchip\Include;PICKit2GenISOC"/>
         <property key="favor-optimization-for" value="-speed,+space"/>
         <property key="identifier-length" value="255"/>
         <property key="operation-mode" value="free"/>

@@ -1,18 +1,24 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"92 main.h
+"12 usb.h
+[s S533 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
+[n S533 . BC8 BC9 BSTALL DTSEN INCDIS KEN DTS UOWN ]
+"10
+[u S532 `uc 1 `S533 1 ]
+[n S532 BDSTAT_T all . ]
+"85 main.h
 [s S529 `uc 1 `uc 1 ]
 [n S529 . rd rb ]
-"89
+"82
 [u S528 `ui 1 `S529 1 ]
 [n S528 sampleBufferBit all . ]
-"100
+"93
 [s S531 `uc 1 `uc 1 ]
 [n S531 . lower upper ]
-"98
+"91
 [u S530 `ui 1 `S531 1 ]
 [n S530 inttime all . ]
 [p mainexit ]
-"13 main.c
+"15 main.c
 [v _setup `(v ~T0 @X0 0 ef ]
 "4823 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic18f4458.h
 [s S308 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -60,11 +66,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S202 . . . . . . . ]
 "2863
 [v _PORTCbits `VS202 ~T0 @X0 0 e@3970 ]
-"17 main.c
+"19 main.c
 [v _delayms `(v ~T0 @X0 0 ef1`ui ]
-"14
+"16
 [v _takeReading `(v ~T0 @X0 0 ef ]
-"15
+"17
 [v _sendData `(v ~T0 @X0 0 ef ]
 "7053 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic18f4458.h
 [s S426 :1 `uc 1 :1 `uc 1 ]
@@ -201,8 +207,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SPBRGH `Vuc ~T0 @X0 0 e@4016 ]
 "5814
 [v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
-"18 main.c
+"20 main.c
 [v _sendSerialStr `(v ~T0 @X0 0 ef2`*Cuc`uc ]
+"8 usb.h
+[v _setupUSB `(v ~T0 @X0 0 ef ]
 "8518 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic18f4458.h
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
 "8524
@@ -4271,305 +4279,367 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x EBTR2=OFF ]
 "69
 [p x EBTRB=OFF ]
-[; ;main.h: 89: typedef union sampleBufferBit {
-[; ;main.h: 90: unsigned int all;
-[; ;main.h: 92: struct {
-[; ;main.h: 93: unsigned char rd;
-[; ;main.h: 94: unsigned char rb;
-[; ;main.h: 95: };
+[; ;main.h: 82: typedef union sampleBufferBit {
+[; ;main.h: 83: unsigned int all;
+[; ;main.h: 85: struct {
+[; ;main.h: 86: unsigned char rd;
+[; ;main.h: 87: unsigned char rb;
+[; ;main.h: 88: };
+[; ;main.h: 89: };
+[; ;main.h: 91: typedef union inttime{
+[; ;main.h: 92: unsigned int all;
+[; ;main.h: 93: struct{
+[; ;main.h: 94: unsigned char lower;
+[; ;main.h: 95: unsigned char upper;
 [; ;main.h: 96: };
-[; ;main.h: 98: typedef union inttime{
-[; ;main.h: 99: unsigned int all;
-[; ;main.h: 100: struct{
-[; ;main.h: 101: unsigned char lower;
-[; ;main.h: 102: unsigned char upper;
-[; ;main.h: 103: };
-[; ;main.h: 104: };
-[; ;main.c: 13: void setup(void);
-[; ;main.c: 14: void takeReading(void);
-[; ;main.c: 15: void sendData(void);
-[; ;main.c: 16: unsigned int sendSerialByte(unsigned char byte);
-[; ;main.c: 17: void delayms(unsigned int ms);
-[; ;main.c: 18: void sendSerialStr(const char * str, unsigned char num);
-"20 main.c
+[; ;main.h: 97: };
+[; ;usb.h: 8: void setupUSB();
+[; ;usb.h: 10: typedef union BDSTAT_T{
+[; ;usb.h: 11: unsigned char all;
+[; ;usb.h: 12: struct{
+[; ;usb.h: 13: unsigned BC8;
+[; ;usb.h: 14: unsigned BC9;
+[; ;usb.h: 15: unsigned BSTALL;
+[; ;usb.h: 16: unsigned DTSEN;
+[; ;usb.h: 17: unsigned INCDIS;
+[; ;usb.h: 18: unsigned KEN;
+[; ;usb.h: 19: unsigned DTS;
+[; ;usb.h: 20: unsigned UOWN;
+[; ;usb.h: 21: };
+[; ;usb.h: 22: }BDSTAT;
+"24 usb.h
+[v _BD0STAT `S532 ~T0 @X0 1 e@1024 ]
+[; ;usb.h: 24: BDSTAT BD0STAT @0x400;
+"25
+[v _BD0CNT `uc ~T0 @X0 1 e@1025 ]
+[; ;usb.h: 25: unsigned char BD0CNT @0x401;
+"26
+[v _BD0ADRL `uc ~T0 @X0 1 e@1026 ]
+[; ;usb.h: 26: unsigned char BD0ADRL @0x402;
+"27
+[v _BD0ADRH `uc ~T0 @X0 1 e@1027 ]
+[; ;usb.h: 27: unsigned char BD0ADRH @0x403;
+"29
+[v _BD1STAT `S532 ~T0 @X0 1 e@1028 ]
+[; ;usb.h: 29: BDSTAT BD1STAT @0x404;
+"30
+[v _BD1CNT `uc ~T0 @X0 1 e@1029 ]
+[; ;usb.h: 30: unsigned char BD1CNT @0x405;
+"31
+[v _BD1ADRL `uc ~T0 @X0 1 e@1030 ]
+[; ;usb.h: 31: unsigned char BD1ADRL @0x406;
+"32
+[v _BD1ADRH `uc ~T0 @X0 1 e@1031 ]
+[; ;usb.h: 32: unsigned char BD1ADRH @0x407;
+"34
+[v _BD2STAT `S532 ~T0 @X0 1 e@1032 ]
+[; ;usb.h: 34: BDSTAT BD2STAT @0x408;
+"35
+[v _BD2CNT `uc ~T0 @X0 1 e@1033 ]
+[; ;usb.h: 35: unsigned char BD2CNT @0x409;
+"36
+[v _BD2ADRL `uc ~T0 @X0 1 e@1034 ]
+[; ;usb.h: 36: unsigned char BD2ADRL @0x40A;
+"37
+[v _BD2ADRH `uc ~T0 @X0 1 e@1035 ]
+[; ;usb.h: 37: unsigned char BD2ADRH @0x40B;
+"39
+[v _BD3STAT `S532 ~T0 @X0 1 e@1036 ]
+[; ;usb.h: 39: BDSTAT BD3STAT @0x40C;
+"40
+[v _BD3CNT `uc ~T0 @X0 1 e@1037 ]
+[; ;usb.h: 40: unsigned char BD3CNT @0x40D;
+"41
+[v _BD3ADRL `uc ~T0 @X0 1 e@1038 ]
+[; ;usb.h: 41: unsigned char BD3ADRL @0x40E;
+"42
+[v _BD3ADRH `uc ~T0 @X0 1 e@1039 ]
+[; ;usb.h: 42: unsigned char BD3ADRH @0x40F;
+[; ;main.c: 15: void setup(void);
+[; ;main.c: 16: void takeReading(void);
+[; ;main.c: 17: void sendData(void);
+[; ;main.c: 18: unsigned int sendSerialByte(unsigned char byte);
+[; ;main.c: 19: void delayms(unsigned int ms);
+[; ;main.c: 20: void sendSerialStr(const char * str, unsigned char num);
+"22 main.c
 [v _sampleBuffer `S528 ~T0 @X0 -> 16 `i e ]
-[; ;main.c: 20: union sampleBufferBit sampleBuffer[16];
-"21
+[; ;main.c: 22: union sampleBufferBit sampleBuffer[16];
+"23
 [v _mode `uc ~T0 @X0 1 e ]
 [i _mode
 -> -> 0 `i `uc
 ]
-[; ;main.c: 21: char mode = 0;
-"22
+[; ;main.c: 23: char mode = 0;
+"24
 [v _sampleDelay `ui ~T0 @X0 1 e ]
 [i _sampleDelay
 -> -> 100 `i `ui
 ]
-[; ;main.c: 22: unsigned int sampleDelay = 100;
-"23
-[v _lastSampleTimestamp `S530 ~T0 @X0 1 e ]
-[; ;main.c: 23: union inttime lastSampleTimestamp;
+[; ;main.c: 24: unsigned int sampleDelay = 100;
 "25
+[v _lastSampleTimestamp `S530 ~T0 @X0 1 e ]
+[; ;main.c: 25: union inttime lastSampleTimestamp;
+"27
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 25: void main(void) {
+[; ;main.c: 27: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 26: setup();
-"26
-[e ( _setup ..  ]
-[; ;main.c: 27: while (1) {
-"27
-[e :U 534 ]
-{
-[; ;main.c: 28: asm(" clrwdt");
+[; ;main.c: 28: setup();
 "28
-[; <"  clrwdt ;# ">
-[; ;main.c: 29: if(PIR1bits.RCIF){
+[e ( _setup ..  ]
+[; ;main.c: 29: while (1) {
 "29
-[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 536  ]
+[e :U 536 ]
 {
+[; ;main.c: 30: asm(" clrwdt");
 "30
-[v _commandByte `uc ~T0 @X0 1 a ]
-[; ;main.c: 30: unsigned char commandByte = RCREG;
-[e = _commandByte _RCREG ]
+[; <"  clrwdt ;# ">
+[; ;main.c: 31: if(PIR1bits.RCIF){
 "31
-[v _newDelay `S530 ~T0 @X0 1 a ]
+[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 538  ]
+{
 "32
-[v _errorFlag `uc ~T0 @X0 1 a ]
-[; ;main.c: 31: union inttime newDelay;
-[; ;main.c: 32: char errorFlag=0;
-[e = _errorFlag -> -> 0 `i `uc ]
-[; ;main.c: 33: switch(commandByte){
+[v _commandByte `uc ~T0 @X0 1 a ]
+[; ;main.c: 32: unsigned char commandByte = RCREG;
+[e = _commandByte _RCREG ]
 "33
-[e $U 538  ]
+[v _newDelay `S530 ~T0 @X0 1 a ]
+"34
+[v _errorFlag `uc ~T0 @X0 1 a ]
+[; ;main.c: 33: union inttime newDelay;
+[; ;main.c: 34: char errorFlag=0;
+[e = _errorFlag -> -> 0 `i `uc ]
+[; ;main.c: 35: switch(commandByte){
+"35
+[e $U 540  ]
 {
-[; ;main.c: 43: case 0xA3:
-"43
-[e :U 539 ]
-[; ;main.c: 44: _delay((unsigned long)((1)*(24000000/4000.0)));
-"44
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 24000000 `l `d .4000.0 `ul ]
-[; ;main.c: 45: if(PIR1bits.RCIF){
+[; ;main.c: 45: case 0xA3:
 "45
-[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 540  ]
-{
-[; ;main.c: 46: newDelay.upper=RCREG;
-"46
-[e = . . _newDelay 1 1 _RCREG ]
-"47
-}
-[; ;main.c: 47: }
-[e $U 541  ]
-"48
-[e :U 540 ]
-[; ;main.c: 48: else{
-{
-[; ;main.c: 49: errorFlag = 1;
-"49
-[e = _errorFlag -> -> 1 `i `uc ]
-"50
-}
 [e :U 541 ]
-[; ;main.c: 50: }
-[; ;main.c: 51: _delay((unsigned long)((1)*(24000000/4000.0)));
-"51
+[; ;main.c: 46: _delay((unsigned long)((1)*(24000000/4000.0)));
+"46
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 24000000 `l `d .4000.0 `ul ]
-[; ;main.c: 52: if(PIR1bits.RCIF){
-"52
+[; ;main.c: 47: if(PIR1bits.RCIF){
+"47
 [e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 542  ]
 {
-[; ;main.c: 53: newDelay.lower=RCREG;
-"53
-[e = . . _newDelay 1 0 _RCREG ]
-"54
+[; ;main.c: 48: newDelay.upper=RCREG;
+"48
+[e = . . _newDelay 1 1 _RCREG ]
+"49
 }
-[; ;main.c: 54: }
+[; ;main.c: 49: }
 [e $U 543  ]
-"55
+"50
 [e :U 542 ]
-[; ;main.c: 55: else{
+[; ;main.c: 50: else{
 {
-[; ;main.c: 56: errorFlag = 1;
-"56
+[; ;main.c: 51: errorFlag = 1;
+"51
 [e = _errorFlag -> -> 1 `i `uc ]
-"57
+"52
 }
 [e :U 543 ]
-[; ;main.c: 57: }
-[; ;main.c: 58: if(!errorFlag){
-"58
-[e $ ! ! != -> _errorFlag `i -> -> -> 0 `i `uc `i 544  ]
+[; ;main.c: 52: }
+[; ;main.c: 53: _delay((unsigned long)((1)*(24000000/4000.0)));
+"53
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 24000000 `l `d .4000.0 `ul ]
+[; ;main.c: 54: if(PIR1bits.RCIF){
+"54
+[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 544  ]
 {
-[; ;main.c: 59: sampleDelay = newDelay.all;
-"59
-[e = _sampleDelay . _newDelay 0 ]
-"60
+[; ;main.c: 55: newDelay.lower=RCREG;
+"55
+[e = . . _newDelay 1 0 _RCREG ]
+"56
 }
-[; ;main.c: 60: }
+[; ;main.c: 56: }
 [e $U 545  ]
-"61
+"57
 [e :U 544 ]
-[; ;main.c: 61: else{
+[; ;main.c: 57: else{
 {
-"63
+[; ;main.c: 58: errorFlag = 1;
+"58
+[e = _errorFlag -> -> 1 `i `uc ]
+"59
 }
 [e :U 545 ]
-[; ;main.c: 63: }
-[; ;main.c: 64: break;
-"64
-[e $U 537  ]
-[; ;main.c: 65: default:
-"65
-[e :U 546 ]
-[; ;main.c: 67: break;
-"67
-[e $U 537  ]
-"68
-}
-[; ;main.c: 68: }
-[e $U 537  ]
-"33
-[e :U 538 ]
-[e [\ _commandByte , $ -> -> 163 `i `uc 539
- 546 ]
-"68
-[e :U 537 ]
-"69
-}
-[e :U 536 ]
-[; ;main.c: 69: }
-[; ;main.c: 82: if(PORTCbits.RC2){
-"82
-[e $ ! != -> . . _PORTCbits 0 2 `i -> -> -> 0 `i `Vuc `i 547  ]
+[; ;main.c: 59: }
+[; ;main.c: 60: if(!errorFlag){
+"60
+[e $ ! ! != -> _errorFlag `i -> -> -> 0 `i `uc `i 546  ]
 {
-[; ;main.c: 83: delayms(sampleDelay);
-"83
-[e ( _delayms (1 _sampleDelay ]
-[; ;main.c: 84: takeReading();
-"84
-[e ( _takeReading ..  ]
-[; ;main.c: 85: sendData();
-"85
-[e ( _sendData ..  ]
-"86
+[; ;main.c: 61: sampleDelay = newDelay.all;
+"61
+[e = _sampleDelay . _newDelay 0 ]
+"62
+}
+[; ;main.c: 62: }
+[e $U 547  ]
+"63
+[e :U 546 ]
+[; ;main.c: 63: else{
+{
+"65
 }
 [e :U 547 ]
+[; ;main.c: 65: }
+[; ;main.c: 66: break;
+"66
+[e $U 539  ]
+[; ;main.c: 67: default:
+"67
+[e :U 548 ]
+[; ;main.c: 69: break;
+"69
+[e $U 539  ]
+"70
+}
+[; ;main.c: 70: }
+[e $U 539  ]
+"35
+[e :U 540 ]
+[e [\ _commandByte , $ -> -> 163 `i `uc 541
+ 548 ]
+"70
+[e :U 539 ]
+"71
+}
+[e :U 538 ]
+[; ;main.c: 71: }
+[; ;main.c: 84: if(PORTCbits.RC2){
+"84
+[e $ ! != -> . . _PORTCbits 0 2 `i -> -> -> 0 `i `Vuc `i 549  ]
+{
+[; ;main.c: 85: delayms(sampleDelay);
+"85
+[e ( _delayms (1 _sampleDelay ]
+[; ;main.c: 86: takeReading();
+"86
+[e ( _takeReading ..  ]
+[; ;main.c: 87: sendData();
 "87
-}
-[e :U 533 ]
-"27
-[e $U 534  ]
-[e :U 535 ]
-[; ;main.c: 86: }
-[; ;main.c: 87: }
-[; ;main.c: 88: return;
+[e ( _sendData ..  ]
 "88
-[e $UE 532  ]
-[; ;main.c: 89: }
-"89
-[e :UE 532 ]
 }
+[e :U 549 ]
+"89
+}
+[e :U 535 ]
+"29
+[e $U 536  ]
+[e :U 537 ]
+[; ;main.c: 88: }
+[; ;main.c: 89: }
+[; ;main.c: 90: return;
+"90
+[e $UE 534  ]
+[; ;main.c: 91: }
 "91
+[e :UE 534 ]
+}
+"93
 [v _setup `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 91: void setup(void) {
+[; ;main.c: 93: void setup(void) {
 [e :U _setup ]
 [f ]
-[; ;main.c: 92: ADCON0bits.ADON = 0;
-"92
-[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
-[; ;main.c: 93: ADCON1 = 0b00001111;
-"93
-[e = _ADCON1 -> -> 15 `i `uc ]
-[; ;main.c: 94: T0CONbits.TMR0ON = 1;
+[; ;main.c: 94: ADCON0bits.ADON = 0;
 "94
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 95: T0CONbits.T08BIT = 0;
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+[; ;main.c: 95: ADCON1 = 0b00001111;
 "95
-[e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
-[; ;main.c: 96: T0CONbits.T0CS = 0;
+[e = _ADCON1 -> -> 15 `i `uc ]
+[; ;main.c: 96: T0CONbits.TMR0ON = 1;
 "96
-[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 97: T0CONbits.PSA = 0;
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 97: T0CONbits.T08BIT = 0;
 "97
-[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 98: T0CONbits.T0PS = 0b101;
+[e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 98: T0CONbits.T0CS = 0;
 "98
-[e = . . _T0CONbits 0 0 -> -> 5 `i `uc ]
-[; ;main.c: 100: TRISCbits.TRISC0 = 0;
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 99: T0CONbits.PSA = 0;
+"99
+[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 100: T0CONbits.T0PS = 0b101;
 "100
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 101: PORTCbits.RC0 = 1;
-"101
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 102: TRISCbits.TRISC1 = 0;
+[e = . . _T0CONbits 0 0 -> -> 5 `i `uc ]
+[; ;main.c: 102: TRISCbits.TRISC0 = 0;
 "102
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 103: PORTCbits.RC1 = 0;
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 103: PORTCbits.RC0 = 1;
 "103
-[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 104: TRISCbits.RC2 = 1;
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 104: TRISCbits.TRISC1 = 0;
 "104
-[e = . . _TRISCbits 1 2 -> -> 1 `i `uc ]
-[; ;main.c: 106: TRISCbits.TRISC6 = 1;
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 105: PORTCbits.RC1 = 0;
+"105
+[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 106: TRISCbits.RC2 = 1;
 "106
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 107: TRISCbits.TRISC7 = 1;
-"107
-[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 108: TXSTAbits.TX9 = 0;
+[e = . . _TRISCbits 1 2 -> -> 1 `i `uc ]
+[; ;main.c: 108: TRISCbits.TRISC6 = 1;
 "108
-[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
-[; ;main.c: 109: TXSTAbits.TXEN = 1;
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 109: TRISCbits.TRISC7 = 1;
 "109
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 110: TXSTAbits.SYNC = 0;
+[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 110: TXSTAbits.TX9 = 0;
 "110
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-[; ;main.c: 111: RCSTAbits.SPEN = 1;
+[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 111: TXSTAbits.TXEN = 1;
 "111
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 112: RCSTAbits.RX9 = 0;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 112: TXSTAbits.SYNC = 0;
 "112
-[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
-[; ;main.c: 113: RCSTAbits.CREN = 1;
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 113: RCSTAbits.SPEN = 1;
 "113
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 114: BAUDCONbits.BRG16 = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 114: RCSTAbits.RX9 = 0;
 "114
-[e = . . _BAUDCONbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 115: TXSTAbits.BRGH = 0;
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 115: RCSTAbits.CREN = 1;
 "115
-[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 116: SPBRGH = 0;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 116: BAUDCONbits.BRG16 = 1;
 "116
-[e = _SPBRGH -> -> 0 `i `uc ]
-[; ;main.c: 117: SPBRG = 12;
+[e = . . _BAUDCONbits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 117: TXSTAbits.BRGH = 0;
 "117
-[e = _SPBRG -> -> 12 `i `uc ]
-[; ;main.c: 118: for (unsigned char i = 0; i < 16; i++) {
+[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 118: SPBRGH = 0;
 "118
+[e = _SPBRGH -> -> 0 `i `uc ]
+[; ;main.c: 119: SPBRG = 12;
+"119
+[e = _SPBRG -> -> 12 `i `uc ]
+[; ;main.c: 120: for (unsigned char i = 0; i < 16; i++) {
+"120
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 549  ]
-[e $U 550  ]
-[e :U 549 ]
+[e $ < -> _i `i -> 16 `i 551  ]
+[e $U 552  ]
+[e :U 551 ]
 {
-[; ;main.c: 119: sampleBuffer[i].all = (unsigned int) 0;
-"119
+[; ;main.c: 121: sampleBuffer[i].all = (unsigned int) 0;
+"121
 [e = . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 0 -> -> 0 `i `ui ]
-"120
+"122
 }
-"118
+"120
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 549  ]
-[e :U 550 ]
-"120
+[e $ < -> _i `i -> 16 `i 551  ]
+[e :U 552 ]
+"122
 }
-[v F4306 `Cuc ~T0 @X0 -> 0 `x s ]
-[i F4306
+[v F4336 `Cuc ~T0 @X0 -> 0 `x s ]
+[i F4336
 :U ..
 -> 82 `c
 -> 101 `c
@@ -4581,292 +4651,295 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-"121
-[v _readyStr `Cuc ~T0 @X0 8  a ]
-[; ;main.c: 120: }
-[; ;main.c: 121: const char readyStr[] = {"Ready!\n"};
-[e = _readyStr F4306 ]
-[; ;main.c: 122: sendSerialStr(readyStr, 7);
-"122
-[e ( _sendSerialStr (2 , &U _readyStr -> -> 7 `i `uc ]
-[; ;main.c: 123: }
 "123
-[e :UE 548 ]
+[v _readyStr `Cuc ~T0 @X0 8  a ]
+[; ;main.c: 122: }
+[; ;main.c: 123: const char readyStr[] = {"Ready!\n"};
+[e = _readyStr F4336 ]
+[; ;main.c: 124: sendSerialStr(readyStr, 7);
+"124
+[e ( _sendSerialStr (2 , &U _readyStr -> -> 7 `i `uc ]
+[; ;main.c: 126: setupUSB();
+"126
+[e ( _setupUSB ..  ]
+[; ;main.c: 127: }
+"127
+[e :UE 550 ]
 }
-"125
+"129
 [v _takeReading `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 125: void takeReading(void) {
+[; ;main.c: 129: void takeReading(void) {
 [e :U _takeReading ]
 [f ]
-[; ;main.c: 126: PORTCbits.RC1 = 1;
-"126
+[; ;main.c: 130: PORTCbits.RC1 = 1;
+"130
 [e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 127: lastSampleTimestamp.lower = TMR0L;
-"127
-[e = . . _lastSampleTimestamp 1 0 _TMR0L ]
-[; ;main.c: 128: lastSampleTimestamp.upper = TMR0H;
-"128
-[e = . . _lastSampleTimestamp 1 1 _TMR0H ]
-[; ;main.c: 129: PORTCbits.RC0 = 1;
-"129
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 131: asm("NOP");
+[; ;main.c: 131: lastSampleTimestamp.lower = TMR0L;
 "131
-[; <" NOP ;# ">
-[; ;main.c: 132: asm("NOP");
+[e = . . _lastSampleTimestamp 1 0 _TMR0L ]
+[; ;main.c: 132: lastSampleTimestamp.upper = TMR0H;
 "132
-[; <" NOP ;# ">
-[; ;main.c: 133: asm("NOP");
+[e = . . _lastSampleTimestamp 1 1 _TMR0H ]
+[; ;main.c: 133: PORTCbits.RC0 = 1;
 "133
-[; <" NOP ;# ">
-[; ;main.c: 134: asm("NOP");
-"134
-[; <" NOP ;# ">
-[; ;main.c: 135: PORTCbits.RC1 = 0;
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 135: asm("NOP");
 "135
-[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
+[; <" NOP ;# ">
+[; ;main.c: 136: asm("NOP");
+"136
+[; <" NOP ;# ">
+[; ;main.c: 137: asm("NOP");
+"137
+[; <" NOP ;# ">
 [; ;main.c: 138: asm("NOP");
 "138
 [; <" NOP ;# ">
-[; ;main.c: 142: sampleBuffer[15].rd = 0xff;
+[; ;main.c: 139: PORTCbits.RC1 = 0;
+"139
+[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 142: asm("NOP");
 "142
-[e = . . *U + &U _sampleBuffer * -> -> -> 15 `i `ui `ux -> -> # *U &U _sampleBuffer `ui `ux 1 0 -> -> 255 `i `uc ]
-[; ;main.c: 143: sampleBuffer[15].rb = 0xff;
-"143
-[e = . . *U + &U _sampleBuffer * -> -> -> 15 `i `ui `ux -> -> # *U &U _sampleBuffer `ui `ux 1 1 -> -> 255 `i `uc ]
-"150
-[v _i `uc ~T0 @X0 1 a ]
-[; ;main.c: 150: unsigned char i = 15;
-[e = _i -> -> 15 `i `uc ]
-[; ;main.c: 151: do {
-"151
-[e :U 555 ]
-{
-[; ;main.c: 152: i--;
-"152
-[e -- _i -> -> 1 `i `uc ]
-[; ;main.c: 153: PORTCbits.RC0 = 0;
-"153
-[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 155: asm("NOP");
-"155
 [; <" NOP ;# ">
-[; ;main.c: 157: sampleBuffer[i].rd = 0xff;
+[; ;main.c: 146: sampleBuffer[15].rd = 0xff;
+"146
+[e = . . *U + &U _sampleBuffer * -> -> -> 15 `i `ui `ux -> -> # *U &U _sampleBuffer `ui `ux 1 0 -> -> 255 `i `uc ]
+[; ;main.c: 147: sampleBuffer[15].rb = 0xff;
+"147
+[e = . . *U + &U _sampleBuffer * -> -> -> 15 `i `ui `ux -> -> # *U &U _sampleBuffer `ui `ux 1 1 -> -> 255 `i `uc ]
+"154
+[v _i `uc ~T0 @X0 1 a ]
+[; ;main.c: 154: unsigned char i = 15;
+[e = _i -> -> 15 `i `uc ]
+[; ;main.c: 155: do {
+"155
+[e :U 557 ]
+{
+[; ;main.c: 156: i--;
+"156
+[e -- _i -> -> 1 `i `uc ]
+[; ;main.c: 157: PORTCbits.RC0 = 0;
 "157
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 159: asm("NOP");
+"159
+[; <" NOP ;# ">
+[; ;main.c: 161: sampleBuffer[i].rd = 0xff;
+"161
 [e = . . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 1 0 -> -> 255 `i `uc ]
-[; ;main.c: 158: sampleBuffer[i].rb = 0xff;
-"158
+[; ;main.c: 162: sampleBuffer[i].rb = 0xff;
+"162
 [e = . . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 1 1 -> -> 255 `i `uc ]
-[; ;main.c: 163: PORTCbits.RC0 = 1;
-"163
+[; ;main.c: 167: PORTCbits.RC0 = 1;
+"167
 [e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
-"165
+"169
 }
-[; ;main.c: 165: } while (i);
-[e $ != -> _i `i -> -> -> 0 `i `uc `i 555  ]
-[e :U 554 ]
-[; ;main.c: 166: }
-"166
-[e :UE 552 ]
+[; ;main.c: 169: } while (i);
+[e $ != -> _i `i -> -> -> 0 `i `uc `i 557  ]
+[e :U 556 ]
+[; ;main.c: 170: }
+"170
+[e :UE 554 ]
 }
-"168
+"172
 [v _sendSerialByte `(ui ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 168: unsigned int sendSerialByte(unsigned char byte) {
+[; ;main.c: 172: unsigned int sendSerialByte(unsigned char byte) {
 [e :U _sendSerialByte ]
 [v _byte `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 169: TXREG = byte;
-"169
-[e = _TXREG _byte ]
-[; ;main.c: 170: asm("NOP");
-"170
-[; <" NOP ;# ">
-"171
-[v _time `ui ~T0 @X0 1 a ]
-[; ;main.c: 171: unsigned int time = 0;
-[e = _time -> -> 0 `i `ui ]
-[; ;main.c: 172: while (!PIR1bits.TXIF) {
-"172
-[e $U 557  ]
-[e :U 558 ]
-{
-[; ;main.c: 173: time++;
+[; ;main.c: 173: TXREG = byte;
 "173
-[e ++ _time -> -> 1 `i `ui ]
+[e = _TXREG _byte ]
+[; ;main.c: 174: asm("NOP");
 "174
-}
-[e :U 557 ]
-"172
-[e $ ! != -> . . _PIR1bits 0 4 `i -> -> -> 0 `i `Vuc `i 558  ]
-[e :U 559 ]
-[; ;main.c: 174: }
-[; ;main.c: 175: return time;
+[; <" NOP ;# ">
 "175
-[e ) _time ]
-[e $UE 556  ]
-[; ;main.c: 176: }
+[v _time `ui ~T0 @X0 1 a ]
+[; ;main.c: 175: unsigned int time = 0;
+[e = _time -> -> 0 `i `ui ]
+[; ;main.c: 176: while (!PIR1bits.TXIF) {
 "176
-[e :UE 556 ]
-}
+[e $U 559  ]
+[e :U 560 ]
+{
+[; ;main.c: 177: time++;
+"177
+[e ++ _time -> -> 1 `i `ui ]
 "178
+}
+[e :U 559 ]
+"176
+[e $ ! != -> . . _PIR1bits 0 4 `i -> -> -> 0 `i `Vuc `i 560  ]
+[e :U 561 ]
+[; ;main.c: 178: }
+[; ;main.c: 179: return time;
+"179
+[e ) _time ]
+[e $UE 558  ]
+[; ;main.c: 180: }
+"180
+[e :UE 558 ]
+}
+"182
 [v _sendData `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 178: void sendData() {
+[; ;main.c: 182: void sendData() {
 [e :U _sendData ]
 [f ]
-"179
-[v _checksum `uc ~T0 @X0 1 a ]
-[; ;main.c: 179: unsigned char checksum=0;
-[e = _checksum -> -> 0 `i `uc ]
-[; ;main.c: 180: sendSerialByte(0);
-"180
-[e ( _sendSerialByte (1 -> -> 0 `i `uc ]
-[; ;main.c: 181: sendSerialByte(lastSampleTimestamp.upper);
-"181
-[e ( _sendSerialByte (1 . . _lastSampleTimestamp 1 1 ]
-[; ;main.c: 182: checksum ^= lastSampleTimestamp.upper;
-"182
-[e =^ _checksum . . _lastSampleTimestamp 1 1 ]
-[; ;main.c: 183: sendSerialByte(lastSampleTimestamp.lower);
 "183
-[e ( _sendSerialByte (1 . . _lastSampleTimestamp 1 0 ]
-[; ;main.c: 184: checksum ^= lastSampleTimestamp.lower;
+[v _checksum `uc ~T0 @X0 1 a ]
+[; ;main.c: 183: unsigned char checksum=0;
+[e = _checksum -> -> 0 `i `uc ]
+[; ;main.c: 184: sendSerialByte(0);
 "184
-[e =^ _checksum . . _lastSampleTimestamp 1 0 ]
-[; ;main.c: 185: for(unsigned char i=0;i<16;i++){
+[e ( _sendSerialByte (1 -> -> 0 `i `uc ]
+[; ;main.c: 185: sendSerialByte(lastSampleTimestamp.upper);
 "185
+[e ( _sendSerialByte (1 . . _lastSampleTimestamp 1 1 ]
+[; ;main.c: 186: checksum ^= lastSampleTimestamp.upper;
+"186
+[e =^ _checksum . . _lastSampleTimestamp 1 1 ]
+[; ;main.c: 187: sendSerialByte(lastSampleTimestamp.lower);
+"187
+[e ( _sendSerialByte (1 . . _lastSampleTimestamp 1 0 ]
+[; ;main.c: 188: checksum ^= lastSampleTimestamp.lower;
+"188
+[e =^ _checksum . . _lastSampleTimestamp 1 0 ]
+[; ;main.c: 189: for(unsigned char i=0;i<16;i++){
+"189
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 561  ]
-[e $U 562  ]
-[e :U 561 ]
+[e $ < -> _i `i -> 16 `i 563  ]
+[e $U 564  ]
+[e :U 563 ]
 {
-[; ;main.c: 186: sendSerialByte(sampleBuffer[i].rd);
-"186
+[; ;main.c: 190: sendSerialByte(sampleBuffer[i].rd);
+"190
 [e ( _sendSerialByte (1 . . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 1 0 ]
-[; ;main.c: 187: checksum ^= sampleBuffer[i].rd;
-"187
-[e =^ _checksum . . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 1 0 ]
-[; ;main.c: 188: sendSerialByte(sampleBuffer[i].rb);
-"188
-[e ( _sendSerialByte (1 . . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 1 1 ]
-[; ;main.c: 189: checksum ^= sampleBuffer[i].rb;
-"189
-[e =^ _checksum . . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 1 1 ]
-"190
-}
-"185
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 561  ]
-[e :U 562 ]
-"190
-}
-[; ;main.c: 190: }
-[; ;main.c: 191: sendSerialByte(checksum);
+[; ;main.c: 191: checksum ^= sampleBuffer[i].rd;
 "191
-[e ( _sendSerialByte (1 _checksum ]
-[; ;main.c: 192: }
+[e =^ _checksum . . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 1 0 ]
+[; ;main.c: 192: sendSerialByte(sampleBuffer[i].rb);
 "192
-[e :UE 560 ]
-}
+[e ( _sendSerialByte (1 . . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 1 1 ]
+[; ;main.c: 193: checksum ^= sampleBuffer[i].rb;
+"193
+[e =^ _checksum . . *U + &U _sampleBuffer * -> _i `ux -> -> # *U &U _sampleBuffer `ui `ux 1 1 ]
 "194
+}
+"189
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 16 `i 563  ]
+[e :U 564 ]
+"194
+}
+[; ;main.c: 194: }
+[; ;main.c: 195: sendSerialByte(checksum);
+"195
+[e ( _sendSerialByte (1 _checksum ]
+[; ;main.c: 196: }
+"196
+[e :UE 562 ]
+}
+"198
 [v _delayms `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;main.c: 194: void delayms(unsigned int ms) {
+[; ;main.c: 198: void delayms(unsigned int ms) {
 [e :U _delayms ]
 [v _ms `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 195: ms -= 0;
-"195
+[; ;main.c: 199: ms -= 0;
+"199
 [e =- _ms -> -> 0 `i `ui ]
-"196
-[v _chunks `ui ~T0 @X0 1 a ]
-[; ;main.c: 196: unsigned int chunks = ms / 10;
-[e = _chunks / _ms -> -> 10 `i `ui ]
-"197
-[v _remainder `uc ~T0 @X0 1 a ]
-[; ;main.c: 197: unsigned char remainder = ms % 10;
-[e = _remainder -> % _ms -> -> 10 `i `ui `uc ]
-"198
-[v _i `ui ~T0 @X0 1 a ]
-[; ;main.c: 198: unsigned int i;
-[; ;main.c: 199: for (i = 0; i < chunks; i++) {
-"199
-{
-[e = _i -> -> 0 `i `ui ]
-[e $U 568  ]
-[e :U 565 ]
-{
-[; ;main.c: 200: _delay((unsigned long)((10)*(24000000/4000.0)));
 "200
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 24000000 `l `d .4000.0 `ul ]
+[v _chunks `ui ~T0 @X0 1 a ]
+[; ;main.c: 200: unsigned int chunks = ms / 10;
+[e = _chunks / _ms -> -> 10 `i `ui ]
 "201
-}
-"199
-[e ++ _i -> -> 1 `i `ui ]
-[e :U 568 ]
-[e $ < _i _chunks 565  ]
-[e :U 566 ]
-"201
-}
-[; ;main.c: 201: }
-[; ;main.c: 202: for(i=0;i<remainder;i++){
+[v _remainder `uc ~T0 @X0 1 a ]
+[; ;main.c: 201: unsigned char remainder = ms % 10;
+[e = _remainder -> % _ms -> -> 10 `i `ui `uc ]
 "202
+[v _i `ui ~T0 @X0 1 a ]
+[; ;main.c: 202: unsigned int i;
+[; ;main.c: 203: for (i = 0; i < chunks; i++) {
+"203
 {
 [e = _i -> -> 0 `i `ui ]
-[e $U 572  ]
-[e :U 569 ]
+[e $U 570  ]
+[e :U 567 ]
 {
-[; ;main.c: 203: _delay((unsigned long)((1)*(24000000/4000.0)));
-"203
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 24000000 `l `d .4000.0 `ul ]
+[; ;main.c: 204: _delay((unsigned long)((10)*(24000000/4000.0)));
 "204
-}
-"202
-[e ++ _i -> -> 1 `i `ui ]
-[e :U 572 ]
-[e $ < _i -> _remainder `ui 569  ]
-[e :U 570 ]
-"204
-}
-[; ;main.c: 204: }
-[; ;main.c: 205: }
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 24000000 `l `d .4000.0 `ul ]
 "205
-[e :UE 564 ]
 }
+"203
+[e ++ _i -> -> 1 `i `ui ]
+[e :U 570 ]
+[e $ < _i _chunks 567  ]
+[e :U 568 ]
+"205
+}
+[; ;main.c: 205: }
+[; ;main.c: 206: for(i=0;i<remainder;i++){
+"206
+{
+[e = _i -> -> 0 `i `ui ]
+[e $U 574  ]
+[e :U 571 ]
+{
+[; ;main.c: 207: _delay((unsigned long)((1)*(24000000/4000.0)));
 "207
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 24000000 `l `d .4000.0 `ul ]
+"208
+}
+"206
+[e ++ _i -> -> 1 `i `ui ]
+[e :U 574 ]
+[e $ < _i -> _remainder `ui 571  ]
+[e :U 572 ]
+"208
+}
+[; ;main.c: 208: }
+[; ;main.c: 209: }
+"209
+[e :UE 566 ]
+}
+"211
 [v _sendSerialStr `(v ~T0 @X0 1 ef2`*Cuc`uc ]
 {
-[; ;main.c: 207: void sendSerialStr(const char * str, unsigned char num){
+[; ;main.c: 211: void sendSerialStr(const char * str, unsigned char num){
 [e :U _sendSerialStr ]
 [v _str `*Cuc ~T0 @X0 1 r1 ]
 [v _num `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;main.c: 208: for(unsigned int i=0; i<num; i++){
-"208
+[; ;main.c: 212: for(unsigned int i=0; i<num; i++){
+"212
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
-[e $U 577  ]
-[e :U 574 ]
+[e $U 579  ]
+[e :U 576 ]
 {
-[; ;main.c: 209: sendSerialByte(str[i]);
-"209
+[; ;main.c: 213: sendSerialByte(str[i]);
+"213
 [e ( _sendSerialByte (1 *U + _str * -> _i `ux -> -> # *U _str `ui `ux ]
-"210
+"214
 }
-"208
+"212
 [e ++ _i -> -> 1 `i `ui ]
+[e :U 579 ]
+[e $ < _i -> _num `ui 576  ]
 [e :U 577 ]
-[e $ < _i -> _num `ui 574  ]
-[e :U 575 ]
-"210
+"214
 }
-[; ;main.c: 210: }
-[; ;main.c: 211: }
-"211
-[e :UE 573 ]
+[; ;main.c: 214: }
+[; ;main.c: 215: }
+"215
+[e :UE 575 ]
 }

@@ -27,21 +27,79 @@
 [v ___flmul __flmul `(d  1 e 3 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"25 C:\Users\carlosj\Documents\openEEG\modEEG.X\main.c
+"27 C:\Users\carlosj\Documents\openEEG\modEEG.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"91
+"93
 [v _setup setup `(v  1 e 1 0 ]
-"125
+"129
 [v _takeReading takeReading `(v  1 e 1 0 ]
-"168
+"172
 [v _sendSerialByte sendSerialByte `(ui  1 e 2 0 ]
-"178
+"182
 [v _sendData sendData `(v  1 e 1 0 ]
-"194
+"198
 [v _delayms delayms `(v  1 e 1 0 ]
-"207
+"211
 [v _sendSerialStr sendSerialStr `(v  1 e 1 0 ]
-[s S86 . 1 `uc 1 RC0 1 0 :1:0 
+"10 C:\Users\carlosj\Documents\openEEG\modEEG.X\usb.c
+[v _setupUSB setupUSB `(v  1 e 1 0 ]
+[s S685 . 1 `uc 1 PPB 1 0 :2:0 
+`uc 1 FSEN 1 0 :1:2 
+`uc 1 UTRDIS 1 0 :1:3 
+`uc 1 UPUEN 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 UOEMON 1 0 :1:6 
+`uc 1 UTEYE 1 0 :1:7 
+]
+"773 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic18f4458.h
+[s S693 . 1 `uc 1 PPB0 1 0 :1:0 
+`uc 1 PPB1 1 0 :1:1 
+]
+[s S696 . 1 `uc 1 UPP0 1 0 :1:0 
+]
+[s S698 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 UPP1 1 0 :1:1 
+]
+[u S701 . 1 `S685 1 . 1 0 `S693 1 . 1 0 `S696 1 . 1 0 `S698 1 . 1 0 ]
+[v _UCFGbits UCFGbits `VES701  1 e 1 @3951 ]
+[s S723 . 1 `uc 1 EPSTALL 1 0 :1:0 
+`uc 1 EPINEN 1 0 :1:1 
+`uc 1 EPOUTEN 1 0 :1:2 
+`uc 1 EPCONDIS 1 0 :1:3 
+`uc 1 EPHSHK 1 0 :1:4 
+]
+"879
+[s S729 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 EP0CONDIS 1 0 :1:3 
+]
+[s S732 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 EP0HSHK 1 0 :1:4 
+]
+[s S735 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 EP0INEN 1 0 :1:1 
+]
+[s S738 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 EP0OUTEN 1 0 :1:2 
+]
+[s S741 . 1 `uc 1 EP0STALL 1 0 :1:0 
+]
+[s S743 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 EPCONDIS0 1 0 :1:3 
+]
+[s S746 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 EPHSHK0 1 0 :1:4 
+]
+[s S749 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 EPINEN0 1 0 :1:1 
+]
+[s S752 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 EPOUTEN0 1 0 :1:2 
+]
+[s S755 . 1 `uc 1 EPSTALL0 1 0 :1:0 
+]
+[u S757 . 1 `S723 1 . 1 0 `S729 1 . 1 0 `S732 1 . 1 0 `S735 1 . 1 0 `S738 1 . 1 0 `S741 1 . 1 0 `S743 1 . 1 0 `S746 1 . 1 0 `S749 1 . 1 0 `S752 1 . 1 0 `S755 1 . 1 0 ]
+[v _UEP0bits UEP0bits `VES757  1 e 1 @3952 ]
+[s S98 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -50,33 +108,33 @@
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-"2863 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic18f4458.h
-[s S95 . 1 `uc 1 T1OSO 1 0 :1:0 
+"2863
+[s S107 . 1 `uc 1 T1OSO 1 0 :1:0 
 `uc 1 T1OSI 1 0 :1:1 
 `uc 1 CCP1 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 TX 1 0 :1:6 
 `uc 1 RX 1 0 :1:7 
 ]
-[s S102 . 1 `uc 1 T13CKI 1 0 :1:0 
+[s S114 . 1 `uc 1 T13CKI 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 P1A 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 CK 1 0 :1:6 
 `uc 1 DT 1 0 :1:7 
 ]
-[s S109 . 1 `uc 1 . 1 0 :1:0 
+[s S121 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCP2 1 0 :1:1 
 ]
-[s S112 . 1 `uc 1 . 1 0 :2:0 
+[s S124 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PA1 1 0 :1:2 
 ]
-[s S115 . 1 `uc 1 . 1 0 :1:0 
+[s S127 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 PA2 1 0 :1:1 
 ]
-[u S118 . 1 `S86 1 . 1 0 `S95 1 . 1 0 `S102 1 . 1 0 `S109 1 . 1 0 `S112 1 . 1 0 `S115 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES118  1 e 1 @3970 ]
-[s S266 . 1 `uc 1 TRISC0 1 0 :1:0 
+[u S130 . 1 `S98 1 . 1 0 `S107 1 . 1 0 `S114 1 . 1 0 `S121 1 . 1 0 `S124 1 . 1 0 `S127 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES130  1 e 1 @3970 ]
+[s S278 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
@@ -84,16 +142,16 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "4224
-[s S273 . 1 `uc 1 RC0 1 0 :1:0 
+[s S285 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S280 . 1 `S266 1 . 1 0 `S273 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES280  1 e 1 @3988 ]
-[s S37 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S292 . 1 `S278 1 . 1 0 `S285 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES292  1 e 1 @3988 ]
+[s S49 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -103,18 +161,18 @@
 `uc 1 SPPIF 1 0 :1:7 
 ]
 "4846
-[s S46 . 1 `uc 1 . 1 0 :7:0 
+[s S58 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 PSPIF 1 0 :1:7 
 ]
-[s S49 . 1 `uc 1 . 1 0 :5:0 
+[s S61 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RC1IF 1 0 :1:5 
 ]
-[s S52 . 1 `uc 1 . 1 0 :4:0 
+[s S64 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 ]
-[u S55 . 1 `S37 1 . 1 0 `S46 1 . 1 0 `S49 1 . 1 0 `S52 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES55  1 e 1 @3998 ]
-[s S385 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S67 . 1 `S49 1 . 1 0 `S58 1 . 1 0 `S61 1 . 1 0 `S64 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES67  1 e 1 @3998 ]
+[s S397 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -124,23 +182,23 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "5327
-[s S394 . 1 `uc 1 . 1 0 :3:0 
+[s S406 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S397 . 1 `uc 1 . 1 0 :5:0 
+[s S409 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[s S400 . 1 `uc 1 . 1 0 :6:0 
+[s S412 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S403 . 1 `uc 1 . 1 0 :6:0 
+[s S415 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S406 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S418 . 1 `uc 1 RCD8 1 0 :1:0 
 ]
-[u S408 . 1 `S385 1 . 1 0 `S394 1 . 1 0 `S397 1 . 1 0 `S400 1 . 1 0 `S403 1 . 1 0 `S406 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES408  1 e 1 @4011 ]
-[s S298 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S420 . 1 `S397 1 . 1 0 `S406 1 . 1 0 `S409 1 . 1 0 `S412 1 . 1 0 `S415 1 . 1 0 `S418 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES420  1 e 1 @4011 ]
+[s S310 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -150,36 +208,36 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "5555
-[s S307 . 1 `uc 1 . 1 0 :2:0 
+[s S319 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 BRGH1 1 0 :1:2 
 ]
-[s S310 . 1 `uc 1 . 1 0 :7:0 
+[s S322 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S313 . 1 `uc 1 . 1 0 :3:0 
+[s S325 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SENDB1 1 0 :1:3 
 ]
-[s S316 . 1 `uc 1 . 1 0 :4:0 
+[s S328 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SYNC1 1 0 :1:4 
 ]
-[s S319 . 1 `uc 1 . 1 0 :1:0 
+[s S331 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 ]
-[s S322 . 1 `uc 1 . 1 0 :6:0 
+[s S334 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX91 1 0 :1:6 
 ]
-[s S325 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S337 . 1 `uc 1 TX9D1 1 0 :1:0 
 ]
-[s S327 . 1 `uc 1 . 1 0 :5:0 
+[s S339 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 TXEN1 1 0 :1:5 
 ]
-[s S330 . 1 `uc 1 . 1 0 :6:0 
+[s S342 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S333 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S345 . 1 `uc 1 TXD8 1 0 :1:0 
 ]
-[u S335 . 1 `S298 1 . 1 0 `S307 1 . 1 0 `S310 1 . 1 0 `S313 1 . 1 0 `S316 1 . 1 0 `S319 1 . 1 0 `S322 1 . 1 0 `S325 1 . 1 0 `S327 1 . 1 0 `S330 1 . 1 0 `S333 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES335  1 e 1 @4012 ]
+[u S347 . 1 `S310 1 . 1 0 `S319 1 . 1 0 `S322 1 . 1 0 `S325 1 . 1 0 `S328 1 . 1 0 `S331 1 . 1 0 `S334 1 . 1 0 `S337 1 . 1 0 `S339 1 . 1 0 `S342 1 . 1 0 `S345 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES347  1 e 1 @4012 ]
 "5792
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
 "5803
@@ -188,7 +246,7 @@
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
 "5825
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
-[s S439 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S451 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -198,54 +256,54 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "6484
-[s S448 . 1 `uc 1 . 1 0 :4:0 
+[s S460 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SCKP 1 0 :1:4 
 `uc 1 . 1 0 :1:5 
 `uc 1 RCMT 1 0 :1:6 
 ]
-[s S453 . 1 `uc 1 . 1 0 :5:0 
+[s S465 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RXCKP 1 0 :1:5 
 ]
-[s S456 . 1 `uc 1 . 1 0 :1:0 
+[s S468 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 W4E 1 0 :1:1 
 ]
-[u S459 . 1 `S439 1 . 1 0 `S448 1 . 1 0 `S453 1 . 1 0 `S456 1 . 1 0 ]
-[v _BAUDCONbits BAUDCONbits `VES459  1 e 1 @4024 ]
+[u S471 . 1 `S451 1 . 1 0 `S460 1 . 1 0 `S465 1 . 1 0 `S468 1 . 1 0 ]
+[v _BAUDCONbits BAUDCONbits `VES471  1 e 1 @4024 ]
 "6957
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
-[s S171 . 1 `uc 1 . 1 0 :1:0 
+[s S183 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "7091
-[s S174 . 1 `uc 1 ADON 1 0 :1:0 
+[s S186 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 ]
-[s S178 . 1 `uc 1 . 1 0 :1:0 
+[s S190 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
 `uc 1 CHS2 1 0 :1:4 
 `uc 1 CHS3 1 0 :1:5 
 ]
-[s S185 . 1 `uc 1 . 1 0 :1:0 
+[s S197 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 ]
-[s S188 . 1 `uc 1 . 1 0 :1:0 
+[s S200 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[s S191 . 1 `uc 1 . 1 0 :1:0 
+[s S203 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S194 . 1 `uc 1 . 1 0 :1:0 
+[s S206 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S197 . 1 `uc 1 . 1 0 :1:0 
+[s S209 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S200 . 1 `S171 1 . 1 0 `S174 1 . 1 0 `S178 1 . 1 0 `S185 1 . 1 0 `S188 1 . 1 0 `S191 1 . 1 0 `S194 1 . 1 0 `S197 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES200  1 e 1 @4034 ]
-[s S240 . 1 `uc 1 T0PS 1 0 :3:0 
+[u S212 . 1 `S183 1 . 1 0 `S186 1 . 1 0 `S190 1 . 1 0 `S197 1 . 1 0 `S200 1 . 1 0 `S203 1 . 1 0 `S206 1 . 1 0 `S209 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES212  1 e 1 @4034 ]
+[s S252 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -253,99 +311,138 @@
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "8463
-[s S247 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S259 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 ]
-[u S251 . 1 `S240 1 . 1 0 `S247 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES251  1 e 1 @4053 ]
+[u S263 . 1 `S252 1 . 1 0 `S259 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES263  1 e 1 @4053 ]
 "8518
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "8524
 [v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
-[s S21 . 2 `uc 1 rd 1 0 `uc 1 rb 1 1 ]
-"20 C:\Users\carlosj\Documents\openEEG\modEEG.X\main.c
-[u S24 sampleBufferBit 2 `ui 1 all 2 0 `S21 1 . 2 0 ]
-[v _sampleBuffer sampleBuffer `[16]S24  1 e 32 0 ]
-"22
+[s S33 . 2 `uc 1 rd 1 0 `uc 1 rb 1 1 ]
+"22 C:\Users\carlosj\Documents\openEEG\modEEG.X\main.c
+[u S36 sampleBufferBit 2 `ui 1 all 2 0 `S33 1 . 2 0 ]
+[v _sampleBuffer sampleBuffer `[16]S36  1 e 32 0 ]
+"24
 [v _sampleDelay sampleDelay `ui  1 e 2 0 ]
-[s S27 . 2 `uc 1 lower 1 0 `uc 1 upper 1 1 ]
-"23
-[u S30 inttime 2 `ui 1 all 2 0 `S27 1 . 2 0 ]
-[v _lastSampleTimestamp lastSampleTimestamp `S30  1 e 2 0 ]
+[s S39 . 2 `uc 1 lower 1 0 `uc 1 upper 1 1 ]
 "25
+[u S42 inttime 2 `ui 1 all 2 0 `S39 1 . 2 0 ]
+[v _lastSampleTimestamp lastSampleTimestamp `S42  1 e 2 0 ]
+[s S21 . 16 `ui 1 BC8 2 0 `ui 1 BC9 2 2 `ui 1 BSTALL 2 4 `ui 1 DTSEN 2 6 `ui 1 INCDIS 2 8 `ui 1 KEN 2 10 `ui 1 DTS 2 12 `ui 1 UOWN 2 14 ]
+"24 C:\Users\carlosj\Documents\openEEG\modEEG.X\usb.h
+[u S30 BDSTAT_T 16 `uc 1 all 1 0 `S21 1 . 16 0 ]
+[v _BD0STAT BD0STAT `S30  1 e 16 @1024 ]
+"25
+[v _BD0CNT BD0CNT `uc  1 e 1 @1025 ]
+"26
+[v _BD0ADRL BD0ADRL `uc  1 e 1 @1026 ]
+"27
+[v _BD0ADRH BD0ADRH `uc  1 e 1 @1027 ]
+"29
+[v _BD1STAT BD1STAT `S30  1 e 16 @1028 ]
+"30
+[v _BD1CNT BD1CNT `uc  1 e 1 @1029 ]
+"31
+[v _BD1ADRL BD1ADRL `uc  1 e 1 @1030 ]
+"32
+[v _BD1ADRH BD1ADRH `uc  1 e 1 @1031 ]
+"34
+[v _BD2STAT BD2STAT `S30  1 e 16 @1032 ]
+"35
+[v _BD2CNT BD2CNT `uc  1 e 1 @1033 ]
+"36
+[v _BD2ADRL BD2ADRL `uc  1 e 1 @1034 ]
+"37
+[v _BD2ADRH BD2ADRH `uc  1 e 1 @1035 ]
+"39
+[v _BD3STAT BD3STAT `S30  1 e 16 @1036 ]
+"40
+[v _BD3CNT BD3CNT `uc  1 e 1 @1037 ]
+"41
+[v _BD3ADRL BD3ADRL `uc  1 e 1 @1038 ]
+"42
+[v _BD3ADRH BD3ADRH `uc  1 e 1 @1039 ]
+"27 C:\Users\carlosj\Documents\openEEG\modEEG.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-[s S27 . 2 `uc 1 lower 1 0 `uc 1 upper 1 1 ]
-"31
-[u S30 inttime 2 `ui 1 all 2 0 `S27 1 . 2 0 ]
-[v main@newDelay newDelay `S30  1 a 2 22 ]
-"32
+[s S39 . 2 `uc 1 lower 1 0 `uc 1 upper 1 1 ]
+"33
+[u S42 inttime 2 `ui 1 all 2 0 `S39 1 . 2 0 ]
+[v main@newDelay newDelay `S42  1 a 2 22 ]
+"34
 [v main@errorFlag errorFlag `uc  1 a 1 21 ]
-"30
+"32
 [v main@commandByte commandByte `uc  1 a 1 20 ]
-"89
+"91
 } 0
-"125
+"129
 [v _takeReading takeReading `(v  1 e 1 0 ]
 {
-"150
+"154
 [v takeReading@i i `uc  1 a 1 0 ]
-"166
+"170
 } 0
-"91
+"93
 [v _setup setup `(v  1 e 1 0 ]
 {
-"118
-[v setup@i i `uc  1 a 1 18 ]
-"121
-[v setup@readyStr readyStr `C[8]uc  1 a 8 10 ]
 "120
-[v setup@F4306 F4306 `C[8]uc  1 s 8 F4306 ]
+[v setup@i i `uc  1 a 1 18 ]
 "123
+[v setup@readyStr readyStr `C[8]uc  1 a 8 10 ]
+"122
+[v setup@F4336 F4336 `C[8]uc  1 s 8 F4336 ]
+"127
 } 0
-"207
+"10 C:\Users\carlosj\Documents\openEEG\modEEG.X\usb.c
+[v _setupUSB setupUSB `(v  1 e 1 0 ]
+{
+"38
+} 0
+"211 C:\Users\carlosj\Documents\openEEG\modEEG.X\main.c
 [v _sendSerialStr sendSerialStr `(v  1 e 1 0 ]
 {
-"208
+"212
 [v sendSerialStr@i i `ui  1 a 2 8 ]
-"207
+"211
 [v sendSerialStr@str str `*.39Cuc  1 p 2 3 ]
 [v sendSerialStr@num num `uc  1 p 1 5 ]
-"211
+"215
 } 0
-"178
+"182
 [v _sendData sendData `(v  1 e 1 0 ]
 {
-"185
+"189
 [v sendData@i i `uc  1 a 1 4 ]
-"179
+"183
 [v sendData@checksum checksum `uc  1 a 1 3 ]
-"192
+"196
 } 0
-"168
+"172
 [v _sendSerialByte sendSerialByte `(ui  1 e 2 0 ]
 {
 [v sendSerialByte@byte byte `uc  1 a 1 wreg ]
-"171
+"175
 [v sendSerialByte@time time `ui  1 a 2 0 ]
-"168
+"172
 [v sendSerialByte@byte byte `uc  1 a 1 wreg ]
 [v sendSerialByte@byte byte `uc  1 a 1 2 ]
-"176
+"180
 } 0
-"194
+"198
 [v _delayms delayms `(v  1 e 1 0 ]
 {
-"198
+"202
 [v delayms@i i `ui  1 a 2 14 ]
-"196
+"200
 [v delayms@chunks chunks `ui  1 a 2 11 ]
-"197
+"201
 [v delayms@remainder remainder `uc  1 a 1 13 ]
-"194
+"198
 [v delayms@ms ms `ui  1 p 2 7 ]
-"205
+"209
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]

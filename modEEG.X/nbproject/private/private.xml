@@ -5,9 +5,13 @@
         <group>
             <file>file:/C:/Users/carlosj/Documents/openEEG/modEEG.X/main.c</file>
             <file>file:/C:/Users/carlosj/Documents/openEEG/modEEG.X/pindefs.h</file>
+            <file>file:/C:/Users/carlosj/Documents/openEEG/modEEG.X/common.h</file>
+            <file>file:/C:/Users/carlosj/Documents/openEEG/modEEG.X/usb.c</file>
             <file>file:/C:/Program%20Files%20(x86)/Microchip/xc8/v1.38/sources/common/lwdiv.c</file>
             <file>file:/C:/Program%20Files%20(x86)/Microchip/xc8/v1.38/sources/common/lwmod.c</file>
             <file>file:/C:/Users/carlosj/Documents/openEEG/modEEG.X/main.h</file>
+            <file>file:/C:/Users/carlosj/Documents/openEEG/modEEG.X/PICKit2GenISOC/system/typedefs.h</file>
+            <file>file:/C:/Users/carlosj/Documents/openEEG/modEEG.X/usb.h</file>
         </group>
     </open-files>
 </project-private>

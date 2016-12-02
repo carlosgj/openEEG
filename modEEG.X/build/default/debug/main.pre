@@ -5283,7 +5283,7 @@ extern __nonreentrant void _delay3(unsigned char);
 
 #pragma config EBTRB = OFF
 
-# 89
+# 82
 typedef union sampleBufferBit {
 unsigned int all;
 
@@ -5301,7 +5301,44 @@ unsigned char upper;
 };
 };
 
-# 13 "main.c"
+# 8 "usb.h"
+void setupUSB();
+
+typedef union BDSTAT_T{
+unsigned char all;
+struct{
+unsigned BC8;
+unsigned BC9;
+unsigned BSTALL;
+unsigned DTSEN;
+unsigned INCDIS;
+unsigned KEN;
+unsigned DTS;
+unsigned UOWN;
+};
+}BDSTAT;
+
+BDSTAT BD0STAT @0x400;
+unsigned char BD0CNT @0x401;
+unsigned char BD0ADRL @0x402;
+unsigned char BD0ADRH @0x403;
+
+BDSTAT BD1STAT @0x404;
+unsigned char BD1CNT @0x405;
+unsigned char BD1ADRL @0x406;
+unsigned char BD1ADRH @0x407;
+
+BDSTAT BD2STAT @0x408;
+unsigned char BD2CNT @0x409;
+unsigned char BD2ADRL @0x40A;
+unsigned char BD2ADRH @0x40B;
+
+BDSTAT BD3STAT @0x40C;
+unsigned char BD3CNT @0x40D;
+unsigned char BD3ADRL @0x40E;
+unsigned char BD3ADRH @0x40F;
+
+# 15 "main.c"
 void setup(void);
 void takeReading(void);
 void sendData(void);
@@ -5324,7 +5361,7 @@ union inttime newDelay;
 char errorFlag=0;
 switch(commandByte){
 
-# 43
+# 45
 case 0xA3:
 _delay((unsigned long)((1)*(24000000/4000.0)));
 if(PIR1bits.RCIF){
@@ -5353,7 +5390,7 @@ break;
 }
 }
 
-# 82
+# 84
 if(PORTCbits.RC2){
 delayms(sampleDelay);
 takeReading();
@@ -5395,6 +5432,8 @@ sampleBuffer[i].all = (unsigned int) 0;
 }
 const char readyStr[] = {"Ready!\n"};
 sendSerialStr(readyStr, 7);
+
+setupUSB();
 }
 
 void takeReading(void) {
@@ -5417,7 +5456,7 @@ asm("NOP");
 sampleBuffer[15].rd = 0xff;
 sampleBuffer[15].rb = 0xff;
 
-# 150
+# 154
 unsigned char i = 15;
 do {
 i--;
@@ -5428,7 +5467,7 @@ asm("NOP");
 sampleBuffer[i].rd = 0xff;
 sampleBuffer[i].rb = 0xff;
 
-# 163
+# 167
 PORTCbits.RC0 = 1;
 
 } while (i);
