@@ -2000,8 +2000,12 @@ Please make sure your boards conform to these design rules.</description>
 <element name="C19" library="resistor" package="C1206" value="100nF" x="67.31" y="48.895" rot="R270"/>
 <element name="C20" library="resistor" package="C1206" value="100nF" x="62.23" y="47.625" rot="MR90"/>
 <element name="C21" library="resistor" package="C1206" value="100nF" x="74.93" y="40.005" rot="R270"/>
-<element name="C1-" library="modEEG" package="DIN42802" value="DIN42802" x="1.905" y="48.26" rot="R90"/>
-<element name="C1+" library="modEEG" package="DIN42802" value="DIN42802" x="1.905" y="34.29" rot="R90"/>
+<element name="C1-" library="modEEG" package="DIN42802" value="DIN42802" x="1.905" y="48.26" rot="R90">
+<attribute name="PN" value="Plastics1 41828" x="1.905" y="48.26" size="1.778" layer="27" rot="R90" display="off"/>
+</element>
+<element name="C1+" library="modEEG" package="DIN42802" value="DIN42802" x="1.905" y="34.29" rot="R90">
+<attribute name="PN" value="Plastics1 41828" x="1.905" y="34.29" size="1.778" layer="27" rot="R90" display="off"/>
+</element>
 <element name="1-PWR" library="con-samtec" package="TSW-101-02-S-D-RA" value="TSW-101-02-S-D-RA" x="2.54" y="43.18" rot="R270">
 <attribute name="MPN" value="" x="2.54" y="43.18" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="OC_FARNELL" value="unknown" x="2.54" y="43.18" size="1.778" layer="27" rot="R270" display="off"/>
@@ -2066,8 +2070,12 @@ Please make sure your boards conform to these design rules.</description>
 <element name="C17" library="resistor" package="C1206" value="100nF" x="67.31" y="20.32" rot="R270"/>
 <element name="C24" library="resistor" package="C1206" value="100nF" x="62.23" y="19.05" rot="MR90"/>
 <element name="C25" library="resistor" package="C1206" value="100nF" x="74.93" y="11.43" rot="R270"/>
-<element name="C1-1" library="modEEG" package="DIN42802" value="DIN42802" x="1.905" y="19.685" rot="R90"/>
-<element name="C1+1" library="modEEG" package="DIN42802" value="DIN42802" x="1.905" y="5.715" rot="R90"/>
+<element name="C1-1" library="modEEG" package="DIN42802" value="DIN42802" x="1.905" y="19.685" rot="R90">
+<attribute name="PN" value="Plastics1 41828" x="1.905" y="19.685" size="1.778" layer="27" rot="R90" display="off"/>
+</element>
+<element name="C1+1" library="modEEG" package="DIN42802" value="DIN42802" x="1.905" y="5.715" rot="R90">
+<attribute name="PN" value="Plastics1 41828" x="1.905" y="5.715" size="1.778" layer="27" rot="R90" display="off"/>
+</element>
 <element name="1-PWR1" library="con-samtec" package="TSW-101-02-S-D-RA" value="TSW-101-02-S-D-RA" x="2.54" y="14.605" rot="R270">
 <attribute name="MPN" value="" x="2.54" y="14.605" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="OC_FARNELL" value="unknown" x="2.54" y="14.605" size="1.778" layer="27" rot="R270" display="off"/>

@@ -11831,8 +11831,12 @@ Source: Samtec TSW.pdf</description>
 <part name="C19" library="resistor" deviceset="C-EU" device="C1206" value="100nF"/>
 <part name="C20" library="resistor" deviceset="C-EU" device="C1206" value="100nF"/>
 <part name="C21" library="resistor" deviceset="C-EU" device="C1206" value="100nF"/>
-<part name="C1-" library="modEEG" deviceset="DIN42802" device=""/>
-<part name="C1+" library="modEEG" deviceset="DIN42802" device=""/>
+<part name="C1-" library="modEEG" deviceset="DIN42802" device="">
+<attribute name="PN" value="Plastics1 41828"/>
+</part>
+<part name="C1+" library="modEEG" deviceset="DIN42802" device="">
+<attribute name="PN" value="Plastics1 41828"/>
+</part>
 <part name="1-PWR" library="con-samtec" deviceset="TSW-101-02-S-D" device="-RA"/>
 <part name="1+PWR" library="con-samtec" deviceset="TSW-101-02-S-D" device="-RA"/>
 <part name="U$23" library="SUPPLY2" deviceset="+5V/2" device=""/>
@@ -11896,8 +11900,12 @@ Source: Samtec TSW.pdf</description>
 <part name="C17" library="resistor" deviceset="C-EU" device="C1206" value="100nF"/>
 <part name="C24" library="resistor" deviceset="C-EU" device="C1206" value="100nF"/>
 <part name="C25" library="resistor" deviceset="C-EU" device="C1206" value="100nF"/>
-<part name="C1-1" library="modEEG" deviceset="DIN42802" device=""/>
-<part name="C1+1" library="modEEG" deviceset="DIN42802" device=""/>
+<part name="C1-1" library="modEEG" deviceset="DIN42802" device="">
+<attribute name="PN" value="Plastics1 41828"/>
+</part>
+<part name="C1+1" library="modEEG" deviceset="DIN42802" device="">
+<attribute name="PN" value="Plastics1 41828"/>
+</part>
 <part name="1-PWR1" library="con-samtec" deviceset="TSW-101-02-S-D" device="-RA"/>
 <part name="1+PWR1" library="con-samtec" deviceset="TSW-101-02-S-D" device="-RA"/>
 <part name="U$42" library="SUPPLY2" deviceset="+5V/2" device=""/>
@@ -12149,8 +12157,12 @@ Source: Samtec TSW.pdf</description>
 <attribute name="NAME" x="187.96" y="160.02" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="185.42" y="165.1" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="C1-" gate="G$1" x="-27.94" y="236.22" rot="R180"/>
-<instance part="C1+" gate="G$1" x="-27.94" y="200.66" rot="R180"/>
+<instance part="C1-" gate="G$1" x="-27.94" y="236.22" rot="R180">
+<attribute name="PN" x="-27.94" y="236.22" size="1.778" layer="96" rot="R180" display="off"/>
+</instance>
+<instance part="C1+" gate="G$1" x="-27.94" y="200.66" rot="R180">
+<attribute name="PN" x="-27.94" y="200.66" size="1.778" layer="96" rot="R180" display="off"/>
+</instance>
 <instance part="1-PWR" gate="-1" x="-34.29" y="228.6" rot="R180"/>
 <instance part="1-PWR" gate="-2" x="-34.29" y="231.14" rot="R180"/>
 <instance part="1+PWR" gate="-1" x="-34.29" y="208.28" rot="R180"/>
@@ -12288,8 +12300,12 @@ Source: Samtec TSW.pdf</description>
 <attribute name="NAME" x="185.42" y="43.18" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="182.88" y="48.26" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="C1-1" gate="G$1" x="-30.48" y="119.38" rot="R180"/>
-<instance part="C1+1" gate="G$1" x="-30.48" y="83.82" rot="R180"/>
+<instance part="C1-1" gate="G$1" x="-30.48" y="119.38" rot="R180">
+<attribute name="PN" x="-30.48" y="119.38" size="1.778" layer="96" rot="R180" display="off"/>
+</instance>
+<instance part="C1+1" gate="G$1" x="-30.48" y="83.82" rot="R180">
+<attribute name="PN" x="-30.48" y="83.82" size="1.778" layer="96" rot="R180" display="off"/>
+</instance>
 <instance part="1-PWR1" gate="-1" x="-36.83" y="111.76" rot="R180"/>
 <instance part="1-PWR1" gate="-2" x="-36.83" y="114.3" rot="R180"/>
 <instance part="1+PWR1" gate="-1" x="-36.83" y="91.44" rot="R180"/>
