@@ -837,6 +837,20 @@
 <pin name="CLKOUT" x="-12.7" y="-7.62" length="middle"/>
 <pin name="RST" x="-12.7" y="-10.16" length="middle"/>
 </symbol>
+<symbol name="INA217">
+<pin name="IN-" x="-17.78" y="12.7" length="middle"/>
+<pin name="RG1" x="-17.78" y="7.62" length="middle"/>
+<pin name="RG2" x="-17.78" y="-7.62" length="middle"/>
+<pin name="IN+" x="-17.78" y="-12.7" length="middle"/>
+<pin name="OUT" x="17.78" y="0" length="middle" rot="R180"/>
+<pin name="V+" x="2.54" y="20.32" length="middle" rot="R270"/>
+<pin name="V-" x="2.54" y="-20.32" length="middle" rot="R90"/>
+<wire x1="-12.7" y1="15.24" x2="-12.7" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-15.24" x2="12.7" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="12.7" y1="-15.24" x2="12.7" y2="15.24" width="0.254" layer="94"/>
+<wire x1="12.7" y1="15.24" x2="-12.7" y2="15.24" width="0.254" layer="94"/>
+<pin name="REF" x="-2.54" y="-20.32" length="middle" rot="R90"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="TMV0505" prefix="IC" uservalue="yes">
@@ -907,6 +921,28 @@
 <connect gate="G$1" pin="RST" pad="P$8"/>
 <connect gate="G$1" pin="SCK" pad="P$1"/>
 <connect gate="G$1" pin="WOL" pad="P$4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="INA217">
+<gates>
+<gate name="G$1" symbol="INA217" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="DIL-08">
+<connects>
+<connect gate="G$1" pin="IN+" pad="3"/>
+<connect gate="G$1" pin="IN-" pad="2"/>
+<connect gate="G$1" pin="OUT" pad="6"/>
+<connect gate="G$1" pin="REF" pad="5"/>
+<connect gate="G$1" pin="RG1" pad="1"/>
+<connect gate="G$1" pin="RG2" pad="8"/>
+<connect gate="G$1" pin="V+" pad="7"/>
+<connect gate="G$1" pin="V-" pad="4"/>
 </connects>
 <technologies>
 <technology name=""/>
